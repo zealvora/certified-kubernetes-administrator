@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kplabs-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: kplabs-pods
+        image: busybox
+        command: ["/bin/sh"]
+        args: ["-c", "echo Hello World"]
+      restartPolicy: Never
