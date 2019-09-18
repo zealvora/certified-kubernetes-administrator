@@ -1,0 +1,24 @@
+Metric Server GitHub Page:
+
+https://github.com/kubernetes/kube-state-metrics
+
+Commands to Deploy Metric Server:
+
+git clone https://github.com/kubernetes-incubator/metrics-server.git
+cd metrics-server/deploy/1.8+
+
+Modify the metrics-server-deployment.yaml to include following lines:
+
+command:
+ - /metrics-server
+ - --kubelet-insecure-tls
+ - --kubelet-preferred-address-types=InternalIP
+ 
+ Go back one directory up with cd ../
+ 
+ kubectl apply -f 1.8+
+ 
+ Commands to View Metrics:
+ 
+ kubectl top pods
+ kubectl top nodes
