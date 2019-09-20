@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  labels:
+    app: frontend
+spec:
+  containers:
+  - name: frontend
+    image: nginx
+  nodeSelector:
+    kubernetes.io/hostname: kplabs-demo-ri0f
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontendpod
+  labels:
+    app: frontend
+spec:
+  containers:
+  - name: frontendpod
+    image: nginx
+  nodeSelector:
+    kubernetes.io/hostname: kplabs-demo-ri0y
