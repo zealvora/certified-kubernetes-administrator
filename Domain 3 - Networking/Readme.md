@@ -10,19 +10,22 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
 | Sr No | Document Link |
 | ------ | ------ |
 | 1 | [Creating our first Service and Endpoint][PlDa] |
-| 2 | [Creating our first ReplicaSet][PlDb] |
-| 3 | [Creating our first deployment][PlDc] 
-| 4 | [Understanding Liveness Probe][PlDd] |
-| 5 | [Understanding Readiness Probe][PlDe] |
-| 6 | [Creating first Job in Kubernetes][PlDf] |
-| 7 | [CronJobs][PlDg] |
+| 2 | [Service Type: NodePort][PlDb] |
+| 3 | [Service Type: Load Balancer][PlDc] 
+| 4 | [Deploying our first Helm Chart][PlDd] |
+| 5 | [Named Based Virtual Hosting (Ingress)][PlDe] |
+| 6 | [Deploying Nginx Ingress Controller][PlDf] |
+| 7 | [Understanding Ingress Resource and Ingress Controllers][PlDg] |
+| 8 | [Configuring Default BackEnd for Ingresss][PlDh] |
 
 
 
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/serviceandendpoints.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Application%20LifeCycle%20Management/replicaset.yaml>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Application%20LifeCycle%20Management/deployment.yaml>
-  [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Application%20LifeCycle%20Management/livenessprobe.yaml>
-   [PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Application%20LifeCycle%20Management/readinessprobe.yaml>
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Application%20LifeCycle%20Management/jobs.yaml>
-   [PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Application%20LifeCycle%20Management/cronjob.yaml>
+   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/nodeport.yaml>
+   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/loadbalancer.yaml>
+  [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/first-helm-chart.md>
+[PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/kplabs-ingress.yaml>
+   [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/deploy-ingress-controller.txt>
+   [PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Application%20LifeCycle%20Management/jobs.yaml>
+   [PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/kplabs-ingress-default-backend.yamll>
+
