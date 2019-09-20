@@ -12,7 +12,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
 | 1 | [Core Concepts][PlDa] |
 | 2 | [Application Lifecycle Management][PlDb] |
 | 3 | [Networking][PlDc] 
-| 4 | [plugins/Scheduling][PlDd] |
+| 4 | [Scheduling][PlDd] |
 | 5 | [Security][PlDe] |
 | 6 | [Storage][PlDf] |
 | 7 | [Installation, Configuration, Validation][PlDg] |
