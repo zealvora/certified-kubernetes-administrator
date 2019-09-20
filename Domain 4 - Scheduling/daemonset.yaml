@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: kplabs-daemonset
+spec:
+  selector:
+    matchLabels:
+      name: kplabs-all-pods
+  template:
+    metadata:
+      labels:
+        name: kplabs-all-pods
+    spec:
+      containers:
+      - name: kplabs-pods
+        image: nginx
