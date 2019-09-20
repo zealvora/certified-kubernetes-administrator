@@ -1,11 +1,16 @@
-Step 1. Generate Certificate for Administrator User
-
+##### Step 1. Generate Certificate for Administrator User
+```sh
 openssl genrsa -out admin.key 2048
+```
+```sh
 openssl req -new -key admin.key -subj "/CN=admin/O=system:masters" -out admin.csr
+```
+```sh
 openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out admin.crt -days 1000
+```
 
-Step 2. Create KubeConfig file:
-
+##### Step 2. Create KubeConfig file:
+```sh
 {
   kubectl config set-cluster kubernetes-from-scratch \
     --certificate-authority=ca.crt \
@@ -26,9 +31,10 @@ Step 2. Create KubeConfig file:
 
   kubectl config use-context default --kubeconfig=admin.kubeconfig
 }
-
-Step 3: Verify Cluster Status
-
+```
+##### Step 3: Verify Cluster Status
+```sh
 kubectl get componentstatuses --kubeconfig=admin.kubeconfig
 cp /root/certificates/ca.key /var/lib/kubernetes/
 systemctl restart kube-controller-manager
+```
