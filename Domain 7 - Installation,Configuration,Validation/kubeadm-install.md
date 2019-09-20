@@ -1,3 +1,7 @@
+##### Documentation Link:
+
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+
 ##### Step 1: Configure Docker
 ```sh
 yum -y install docker
