@@ -1,4 +1,4 @@
-# Domain 9 - Logging/Monitoring
+# Domain 8 - Logging/Monitoring
 
 The code mentioned in this document are used in the Certified Kubernetes Administrator 2019 course.
 
