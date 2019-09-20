@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kplabs-node-affinity-preferred
+spec:
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 1
+        preference:
+          matchExpressions:
+          - key: memory
+            operator: In
+            values:
+            - high
+            - medium
+  containers:
+  - name: kplabs-affinity-prefferd
+    image: nginx
