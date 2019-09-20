@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-exec
+spec:
+  containers:
+  - name: liveness
+    image: nginx
+    ports:
+    - containerPort: 80
+    livenessProbe:
+      httpGet:
+         path: /kplabs.html
+         port: 80
+      initialDelaySeconds: 60
+      periodSeconds: 5

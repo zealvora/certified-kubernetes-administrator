@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: readiness
+spec:
+  containers:
+  - name: readiness
+    image: ubuntu
+    tty: true
+    readinessProbe:
+     exec:
+       command:
+       - cat
+       - /tmp/healthy
+     initialDelaySeconds: 5
+     periodSeconds: 5
