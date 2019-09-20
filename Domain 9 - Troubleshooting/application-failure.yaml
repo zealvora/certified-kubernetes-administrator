@@ -1,0 +1,49 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+   name: kplabs-service
+spec:
+   selector:
+     run: nginx
+   type: NodePort
+   ports:
+   - port: 8089
+     targetPort: 80
+
+---
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: teama
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-first
+  labels:
+      env: prod
+  namespace: teama
+spec:
+  containers:
+  - name: first-pod
+    image: nginx
+    ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod-second
+  labels:
+      env: pord
+  namespace: teama
+spec:
+  containers:
+  - name: second-pod
+    image: nginx
+    ports:
+        - containerPort: 80
