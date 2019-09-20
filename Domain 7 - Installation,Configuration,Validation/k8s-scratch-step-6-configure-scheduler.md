@@ -1,11 +1,15 @@
-1. Generate Certificates:
-
+##### 1. Generate Certificates:
+```sh
 openssl genrsa -out kube-scheduler.key 2048
+```
+```sh
 openssl req -new -key kube-scheduler.key -subj "/CN=system:kube-scheduler" -out kube-scheduler.csr
+```
+```sh
 openssl x509 -req -in kube-scheduler.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kube-scheduler.crt -days 1000
-
-Step 2: Generate Kubeconfig file:
-
+```
+##### Step 2: Generate Kubeconfig file:
+```sh
 {
   kubectl config set-cluster kubernetes-from-scratch \
     --certificate-authority=ca.crt \
@@ -26,14 +30,14 @@ Step 2: Generate Kubeconfig file:
 
   kubectl config use-context default --kubeconfig=kube-scheduler.kubeconfig
 }
+```
 
-
-3: Copy the scheduler kubeconfig
-
+##### 3: Copy the scheduler kubeconfig
+```sh
 cp kube-scheduler.kubeconfig /var/lib/kubernetes/
-
-4: Configuring SystemD service:
-
+```
+##### 4: Configuring SystemD service:
+```sh
 cat <<EOF | sudo tee /etc/systemd/system/kube-scheduler.service
 [Unit]
 Description=Kubernetes Scheduler
@@ -52,17 +56,17 @@ RestartSec=5
 [Install]
 WantedBy=multi-user.target
 EOF
-
-Step 5: Verification:
-
+```
+##### Step 5: Verification:
+```sh
 cp /root/binaries/kubernetes/server/bin/kube-scheduler /usr/bin
 systemctl start kube-scheduler
 systemctl status kube-scheduler
 systemctl enable kube-scheduler
+```
 
 
 
-
-# Verify Everything:
-
+##### Verify Everything:
+```sh
 kubectl get componentstatuses --kubeconfig admin.kubeconfig
