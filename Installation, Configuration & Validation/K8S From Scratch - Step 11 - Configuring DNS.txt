@@ -1,5 +1,0 @@
-kubectl create -f https://storage.googleapis.com/kubernetes-the-hard-way/kube-dns.yaml
-
-kubectl run busybox --image=busybox:1.28 --command -- sleep 3600
-
-nslookup kubernetes
