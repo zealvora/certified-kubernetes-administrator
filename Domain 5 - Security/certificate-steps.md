@@ -27,6 +27,11 @@ spec:
   groups:
   - system:authenticated
   request: 
+     ADD-YOUR-CSR-HERE
+  - digital signature
+  - key encipherment
+  - client auth
+  usages:
   - digital signature
   - key encipherment
   - client auth
