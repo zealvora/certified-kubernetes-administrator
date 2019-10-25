@@ -1,6 +1,6 @@
-# Domain 2 - POD Design
+# Domain 2 - Application Lifecycle Management
 
-The code mentioned in this document are used in the Certified Kubernetes Application Developer 2019 course.
+The code mentioned in this document are used in the Certified Kubernetes Administrator 2019 course.
 
 https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEARNING
 
@@ -12,8 +12,10 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
 | 1 | [Implementing Labels and Selectors][PlDa] |
 | 2 | [Creating our first ReplicaSet][PlDb] |
 | 3 | [Creating our first deployment][PlDc] 
-| 4 | [Creating first Job in Kubernetes][PlDf] |
-| 5 | [CronJobs][PlDg] |
+| 4 | [Understanding Liveness Probe][PlDd] |
+| 5 | [Understanding Readiness Probe][PlDe] |
+| 6 | [Creating first Job in Kubernetes][PlDf] |
+| 7 | [CronJobs][PlDg] |
 
 
 
