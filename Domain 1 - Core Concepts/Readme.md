@@ -1,8 +1,8 @@
 # Domain 1 - Core Concepts
 
-The code mentioned in this document are used in the Certified Kubernetes Administrator 2019 course.
+The code mentioned in this document are used in the Certified Kubernetes Application Developer 2019 course.
 
-https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEARNING
+https://www.udemy.com/course/certified-kubernetes-application-developer/?couponCode=LEARNING
 
 
 # Video-Document Mapper
