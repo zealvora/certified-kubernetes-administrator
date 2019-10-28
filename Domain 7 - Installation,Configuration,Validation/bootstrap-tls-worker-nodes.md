@@ -226,7 +226,7 @@ mkdir -p \
 ```
 ```sh
 mv cni-plugins-linux-amd64-v0.8.2.tgz /usr/cni/bin
-cd /usr/cni/bin
+cd /opt/cni/bin
 tar -xzvf cni-plugins-linux-amd64-v0.8.2.tgz
 ```
 ##### Final Step: Start the Service:
