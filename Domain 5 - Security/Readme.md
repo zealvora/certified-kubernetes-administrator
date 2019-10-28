@@ -29,7 +29,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
   [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Security/access-control-namespace.md>
 [PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Security/cluster-role-binding.mdl>
    [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Security/secret-data.md>
-[PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Security/secret-data.yaml>
+[PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/edit/master/Domain%205%20-%20Security/mounting-secrets.md>
 [PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Security/nsp-deny-pod.yaml>
 [PlDi]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Security/capabilities.yaml>
 [PlDj]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Security/privileged.yaml>
