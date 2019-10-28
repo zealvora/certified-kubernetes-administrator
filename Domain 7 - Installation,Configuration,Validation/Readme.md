@@ -24,6 +24,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
 | 12 | [Step 12: Kubernetes From Scratch - Kubelet Preferred Instance Type ][PlDm] 
 | 13 | [Step 13: Kubernetes From Scratch - Smoke Testing ][PlDn] 
 | 14 | [Encrypting Secrets in ETCD at Rest][PlDo]
+| 15 | [TLS Bootstrapping of Worker Nodes][PlDp]
 
 
 
@@ -42,3 +43,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
 [PlDm]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%207%20-%20Installation%2CConfiguration%2CValidation/k8s-scratch-step-12-kubelet-preferred-type.md>
 [PlDn]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%207%20-%20Installation%2CConfiguration%2CValidation/k8s-scratch-step-3-smoke-testing.md>
 [PlDo]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%207%20-%20Installation%2CConfiguration%2CValidation/etcd-encryption-at-rest.md>
+[PlDp]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%207%20-%20Installation%2CConfiguration%2CValidation/bootstrap-tls-worker-nodes.md>
