@@ -12,10 +12,12 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
 | 1 | [Creating Volumes in Kubernetes][PlDa] |
 | 2 | [PersistentVolume and PersistentVolumeClaim][PlDb] |
 | 3 | [Static vs Dynamic Provisioning of PV][PlDc] 
-
+| 4 | [ConfigMaps][PlDd] 
+| 4 | [Security Contexts][PlDe] 
 
 
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Storage/pod-volume.yaml>
    [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Storage/pvandpvc.md>
    [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Storage/dynamic-pvc.md>
- 
+   [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Storage/pod-configmap.yaml>
+   [PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Storage/pod-securitycontext.yaml>
