@@ -13,7 +13,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
 | 2 | [PersistentVolume and PersistentVolumeClaim][PlDb] |
 | 3 | [Static vs Dynamic Provisioning of PV][PlDc] 
 | 4 | [ConfigMaps][PlDd] 
-| 4 | [Security Contexts][PlDe] 
+| 5 | [Security Contexts][PlDe] 
 
 
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Storage/pod-volume.yaml>
