@@ -42,3 +42,12 @@ Launch a pod from the nginx image. Create a readiness probe for the pod.
 Create a deployment named kplabs-selector. The pods should be launched from nginx image.The pods should only be launched in a node which has a label of disk=ssd. Observe the status of deployment. Add the appropriate label to the worker node and then observe the status of the deployment.
 
 </details>
+
+### Question 6:  CronJob
+
+<details><summary>Expand The Question </summary>
+<p>
+  
+Create a job named kplabs-job. The job should run every minute and should print out the current date.
+
+</details>
