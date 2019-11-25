@@ -98,3 +98,16 @@ Once POD is created, connect to the POD and verify the contents of ```/var/log/1
 4. Edit the POD manifest to make sure busybox pod is available for at-least next 10 minutes.
 </details>
 
+### Question 8: API Primitives
+
+<details><summary>Expand The Question </summary>
+<p>
+
+1. Create a proxy connection via ```kubectl proxy --port 8080```
+
+2. Verify from browser if you are able to see the list all the Kubernetes API's.
+
+3. Find the list of resources under the ```/api/v1```
+
+4. Find the list of all the PODS running within your Kubernetes environment,
+</details>
