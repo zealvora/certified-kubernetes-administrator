@@ -8,7 +8,7 @@ Create a pod with the name of kplabs-nginx. The pod should be launched from an i
 
 </details>
 
-### Question 2: Question 2: Multi-Container Pods
+### Question 2: Multi-Container Pods
 
 <details><summary>Expand The Question </summary>
 <p>
@@ -61,27 +61,8 @@ Create a pod with the name of kplabs-ports. The pod should be launched from an i
 
 </details>
 
-### Question 6: Multi-Container Pods
 
-<details><summary>Expand The Question </summary>
-<p>
-
-a. Create a Multi-Container POD with the name of ```kplabs-multi-container```. 
-
-b. There should be three containers in the pod. 
-
-c. Name the first container should be first-container, 2nd container should be second-container and 3rd container should be third-container
-
-d. 1st container should be launched from ```nginx``` image, second container should be launched from mykplabs/kubernetes:nginx image and third container from busybox image.
-
-e. Connect to the first-container and run the following command:  ```apt-get update && apt-get install net-tools```
-
-f. Connect to the third-container and identify the ports in which processes are listening. Perform ```wget``` command on those ports and check if you can download the HTML page.
-
-</details>
-
-
-### Question 7: Arguments
+### Question 6: Arguments
 
 <details><summary>Expand The Question </summary>
 <p>
@@ -106,7 +87,7 @@ Once POD is created, connect to the POD and verify the contents of ```/var/log/1
 
 </details>
 
-### Question 8: POD Troubleshooting
+### Question 7: POD Troubleshooting
 
 <details><summary>Expand The Question </summary>
 <p>
