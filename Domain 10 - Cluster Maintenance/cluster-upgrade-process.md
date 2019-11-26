@@ -69,7 +69,7 @@ apt-cache policy kubeadm
 ```
 #### Step 2: Upgrade the control plane node:
 ```sh
-apt-get install -y kubeadm=1.16.3-00 && apt-mark hold kubeadm
+apt-mark unhold kubeadm && apt-get install -y kubeadm=1.16.3-00 && apt-mark hold kubeadm
 ```
 #### Step 3: Verify if download has the expected version
 ```sh
