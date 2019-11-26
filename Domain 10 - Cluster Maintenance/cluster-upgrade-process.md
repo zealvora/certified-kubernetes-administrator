@@ -69,7 +69,8 @@ apt-cache policy kubeadm
 ```
 #### Step 2: Upgrade the control plane node:
 ```sh
-apt-mark unhold kubeadm && apt-get install -y kubeadm=1.16.3-00 && apt-mark hold kubeadm
+apt-mark unhold kubeadm
+apt-get install -y kubeadm=1.16.3-00 && apt-mark hold kubeadm
 ```
 #### Step 3: Verify if download has the expected version
 ```sh
@@ -85,8 +86,15 @@ kubeadm upgrade apply v1.16.3
 ```
 #### Step 6: Upgrade the kubelet and kubectl
 ```sh
-apt-mark unhold kubelet kubectl && \
-apt-get update && apt-get install -y kubelet=1.16.3-00 kubectl=1.16.3-00 && \
+apt-mark unhold kubelet kubectl 
+```
+```sh
+apt-get install -y kubelet=1.16.3-00 
+```
+```sh
+apt-get install kubectl=1.16.3-00
+```
+```sh
 apt-mark hold kubelet kubectl
 ```
 #### Step 7: Restart Kubelet
