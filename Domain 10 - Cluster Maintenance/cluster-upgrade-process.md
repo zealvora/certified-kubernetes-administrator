@@ -29,6 +29,10 @@ chmod +x install-kubeadm-master.sh
 ```sh
 ./install-kubeadm-master.sh
 ```
+```sh
+kubeadm join YOUR-IP-HERE:6443 --token 9gidc5.9jwgqo9jaujm74f8 \
+    --discovery-token-ca-cert-hash sha256:dff923c6b627432c0fada59ad762ba33ed13827abf86b5c7d6c5656f1ca46f7f
+```
 
 ### Installing kubeadm in Ubuntu Node (Worker) 
 ```sh
