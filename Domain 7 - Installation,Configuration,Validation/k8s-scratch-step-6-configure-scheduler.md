@@ -1,11 +1,7 @@
 ##### 1. Generate Certificates:
 ```sh
 openssl genrsa -out kube-scheduler.key 2048
-```
-```sh
 openssl req -new -key kube-scheduler.key -subj "/CN=system:kube-scheduler" -out kube-scheduler.csr
-```
-```sh
 openssl x509 -req -in kube-scheduler.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kube-scheduler.crt -days 1000
 ```
 ##### Step 2: Generate Kubeconfig file:
@@ -64,9 +60,3 @@ systemctl start kube-scheduler
 systemctl status kube-scheduler
 systemctl enable kube-scheduler
 ```
-
-
-
-##### Verify Everything:
-```sh
-kubectl get componentstatuses --kubeconfig admin.kubeconfig
