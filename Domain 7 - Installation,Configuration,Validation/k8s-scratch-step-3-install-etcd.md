@@ -6,9 +6,11 @@ swapoff -a
 
 ##### Step 1: Configure the Certificates:
 ```sh
+cd /root/certificates/
 openssl genrsa -out etcd.key 2048
-openssl req -new -key etcd.key -subj "/CN=etcd" -out etcd.csr -config etcd.cnf
 ```
+##### Note: Replace the value associated with IP.1 in the below step. 
+
 ```sh
 cat > etcd.cnf <<EOF
 [req]
@@ -25,6 +27,7 @@ IP.3 = 127.0.0.1
 EOF
 ```
 ```sh
+openssl req -new -key etcd.key -subj "/CN=etcd" -out etcd.csr -config etcd.cnf
 openssl x509 -req -in etcd.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out etcd.crt -extensions v3_req -extfile etcd.cnf -days 1000
 ```
 ##### Step 2: Copy the Certificates and Key to /etc/etcd
