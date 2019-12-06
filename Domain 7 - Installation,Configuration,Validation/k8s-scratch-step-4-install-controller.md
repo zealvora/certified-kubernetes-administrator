@@ -1,12 +1,13 @@
 
+##### 1. Pre-Requisite Step: Move the kubectl binary to the path
+
+cp /root/binaries/kubernetes/server/bin/kubectl /usr/bin/
+
 ##### 1. Generate Certificates:
 ```sh
+cd /root/certificates/
 openssl genrsa -out kube-controller-manager.key 2048
-```
-```sh
 openssl req -new -key kube-controller-manager.key -subj "/CN=system:kube-controller-manager" -out kube-controller-manager.csr
-```
-```sh
 openssl x509 -req -in kube-controller-manager.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out kube-controller-manager.crt -days 1000
 ```
 ##### 2. Generating KubeConfig
