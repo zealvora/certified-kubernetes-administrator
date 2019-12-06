@@ -7,7 +7,7 @@ https://kubernetes.io/docs/setup/release/
 
 ```sh
 yum -y install nano wget
-https://dl.k8s.io/v1.15.0/kubernetes-server-linux-amd64.tar.gz
+wget https://dl.k8s.io/v1.15.0/kubernetes-server-linux-amd64.tar.gz
 tar -xzvf kubernetes-server-linux-amd64.tar.gz
 ```
 
