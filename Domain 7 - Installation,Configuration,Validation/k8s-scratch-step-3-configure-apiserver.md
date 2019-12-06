@@ -11,6 +11,9 @@ cp /root/binaries/kubernetes/server/bin/kube-apiserver /usr/bin/
 
 ##### Step 1. Generate Configuration File for CSR Creation.
 ```sh
+cd /root/certificates
+```
+```sh
 cat <<EOF | sudo tee api.conf
 [req]
 req_extensions = v3_req
