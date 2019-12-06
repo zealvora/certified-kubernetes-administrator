@@ -137,6 +137,7 @@ EOF
 ```sh
 cd /var/lib/kubelet
 cp /var/lib/kubernetes/ca.crt .
+SERVER_IP=IP-OF-API-SERVER  
 ```
 ```sh
 {
@@ -169,7 +170,6 @@ mv kplabs-cka-worker.kubeconfig kubeconfig
 ```sh
 mkdir /var/lib/kube-proxy
 
-SERVER_IP=IP-OF-API-SERVER   
 ```
 ##### Step 2: Generate KubeConfig file:
 ```sh
