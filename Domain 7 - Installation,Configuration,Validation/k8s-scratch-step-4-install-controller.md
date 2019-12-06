@@ -1,8 +1,8 @@
 
 ##### 1. Pre-Requisite Step: Move the kubectl binary to the path
-
+```sh
 cp /root/binaries/kubernetes/server/bin/kubectl /usr/bin/
-
+```
 ##### 1. Generate Certificates:
 ```sh
 cd /root/certificates/
