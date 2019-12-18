@@ -2,7 +2,7 @@
 
 This is a central document which contains all the commands and code files used throughout the video course. 
 
-https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEARNING
+https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-LEARNING
 
 
 # Exam Domains
