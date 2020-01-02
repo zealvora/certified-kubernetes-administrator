@@ -69,7 +69,7 @@ Create a pod with the name of kplabs-ports. The pod should be launched from an i
 
 Create a pod named ```kplabs-logging```
 
-The Pod should have a container running from the busybox image with the following arguments:
+The Pod should have a container running from the nginx image with the following arguments:
 
     - /bin/sh
     - -c
