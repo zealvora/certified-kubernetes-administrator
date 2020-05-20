@@ -87,7 +87,7 @@ ExecStart=/usr/bin/kube-apiserver \\
 --audit-log-path=/var/log/kube-api-audit.log \\
 --bind-address=0.0.0.0 \\
 --event-ttl=1h \\
---runtime-config=api/all
+--runtime-config=api/all=true
 Restart=on-failure
 RestartSec=5
 
