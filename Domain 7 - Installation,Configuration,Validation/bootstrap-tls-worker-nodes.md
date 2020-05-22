@@ -26,6 +26,8 @@ stringData:
   auth-extra-groups: system:bootstrappers:worker,system:bootstrappers:ingress
 EOF
 ```
+kubectl apply -f bootstrap-token.yaml 
+ 
 #### Step 2: Allow kube-apiserver to accept bootstrap tokens:
 ```sh
 --enable-bootstrap-token-auth=true
@@ -225,7 +227,7 @@ mkdir -p \
   /var/run/kubernetes
 ```
 ```sh
-mv cni-plugins-linux-amd64-v0.8.2.tgz /usr/cni/bin
+mv cni-plugins-linux-amd64-v0.8.2.tgz /opt/cni/bin
 cd /opt/cni/bin
 tar -xzvf cni-plugins-linux-amd64-v0.8.2.tgz
 ```
