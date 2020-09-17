@@ -8,15 +8,14 @@ sysctl -w net.ipv4.conf.all.forwarding=1
 cd  /root/binaries/kubernetes/node/bin/
 cp kube-proxy kubectl kubelet /usr/local/bin
 ```
-##### Step 1: Generate Kubelet Certificate for Worker Node.
+#### Step 1: Generate Kubelet Certificate for Worker Node.
 
-Note: 
-   1. Replace the IP Address and Hostname field in the below configurations according to your enviornement. 
+Note:
+   1. Replace the IP Address and Hostname field in the below configurations according to your enviornement.
    2. Run this in the Kubernetes Master Node
 ```sh
 cd /root/certificates
 ```
-
 ```sh
 cat > openssl-kplabs-cka-worker.cnf <<EOF
 [req]
@@ -29,30 +28,29 @@ keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 subjectAltName = @alt_names
 [alt_names]
 DNS.1 = kplabs-cka-worker
-IP.1 = 165.22.216.120
+IP.1 = WORKER-IP
 EOF
 ```
 ```sh
 openssl genrsa -out kplabs-cka-worker.key 2048
 ```
 ```sh
-openssl req -new -key kplabs-cka-worker.key -subj "/CN=system:node:kplabs-cka-worker/O=system:nodes" -out kplabs-cka-worker.csr -config openssl-kplabs-cka-worker.cnf
+openssl req -new -key kube-proxy.key -subj "/CN=system:kube-proxy" -out kube-proxy.csr
+openssl x509 -req -in kube-proxy.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kube-proxy.crt -days 1000
 ```
-```sh
-openssl x509 -req -in kplabs-cka-worker.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kplabs-cka-worker.crt -extensions v3_req -extfile openssl-kplabs-cka-worker.cnf -days 1000
-```
-##### Step 2: Generate kube-proxy certificate:
+
+#### Step 2: Generate kube-proxy certificate:
 ```sh
 openssl genrsa -out kube-proxy.key 2048
 openssl req -new -key kube-proxy.key -subj "/CN=system:kube-proxy" -out kube-proxy.csr
 openssl x509 -req -in kube-proxy.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kube-proxy.crt -days 1000
 ```
-##### Step 3: Copy Certificates to Worker Node:
+#### Step 3: Copy Certificates to Worker Node:
 
 This can either be manual approach or via SCP.
 Certificates: kubelet, kube-proxy and CA certificate.
 
-In-case you want to automate it, then following configuration can be used. 
+In-case you want to automate it, then following configuration can be used.
 In the demo, we had made used of manual way.
 
 In-case, you want to transfer file from master to worker node, then you can make use of the following approach:
@@ -63,17 +61,19 @@ nano /etc/ssh/sshd_config
 PasswordAuthentication yes
 systemctl restart sshd
 useradd zeal
-passwd zeal
+passwd zeal5872#
 ```
 - Master Node:
 ```sh
-scp kube-proxy.crt kube-proxy.key kplabs-cka-worker.crt kplabs-cka-worker.key ca.crt zeal@IP-WORKER-NODE:/tmp
+scp kube-proxy.crt kube-proxy.key kplabs-cka-worker.crt kplabs-cka-worker.key ca.crt zeal@161.35.205.5:/tmp
+
 ```
 - Worker Node:
 ```sh
 mv kube-proxy.crt kube-proxy.key kplabs-cka-worker.crt kplabs-cka-worker.key ca.crt /root/certificates
+
 ```
-##### Step 4: Move Certificates to Specific Location.
+#### Step 4: Move Certificates to Specific Location.
 ```sh
 cd /root/certificates
 mkdir /var/lib/kubernetes
@@ -81,7 +81,7 @@ cp ca.crt /var/lib/kubernetes
 mkdir /var/lib/kubelet
 mv kplabs-cka-worker.crt  kplabs-cka-worker.key  kube-proxy.crt  kube-proxy.key /var/lib/kubelet/
 ```
-##### Step 5: Generate Kubelet Configuration YAML File:
+#### Step 5: Generate Kubelet Configuration YAML File:
 ```sh
 cat <<EOF | sudo tee /var/lib/kubelet/kubelet-config.yaml
 kind: KubeletConfiguration
@@ -101,7 +101,7 @@ clusterDNS:
 runtimeRequestTimeout: "15m"
 EOF
 ```
-##### Step 6: Generate Systemd service file for kubelet:
+#### Step 6: Generate Systemd service file for kubelet:
 
 Create Systemd file for Kubelet:
 ```sh
@@ -132,12 +132,12 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-##### Step 7: Generate the Kubeconfig file for Kubelet
+#### Step 7: Generate the Kubeconfig file for Kubelet
 
 ```sh
 cd /var/lib/kubelet
 cp /var/lib/kubernetes/ca.crt .
-SERVER_IP=IP-OF-API-SERVER  
+SERVER_IP=IP-OF-API-SERVER
 ```
 ```sh
 {
@@ -164,14 +164,14 @@ SERVER_IP=IP-OF-API-SERVER
 ```sh
 mv kplabs-cka-worker.kubeconfig kubeconfig
 ```
-### Part 2 - Kube-Proxy 
+### Part 2 - Kube-Proxy
 
-##### Step 1: Copy Kube Proxy Certificate to Directory:
+#### Step 1: Copy Kube Proxy Certificate to Directory:
 ```sh
 mkdir /var/lib/kube-proxy
 
 ```
-##### Step 2: Generate KubeConfig file:
+#### Step 2: Generate KubeConfig file:
 ```sh
 {
   kubectl config set-cluster kubernetes-from-scratch \
@@ -197,7 +197,10 @@ mkdir /var/lib/kube-proxy
 ```sh
 mv kube-proxy.kubeconfig /var/lib/kube-proxy/kubeconfig
 ```
-##### Step 3: Generate kube-proxy configuration file:
+#### Step 3: Generate kube-proxy configuration file:
+```sh
+cd /var/lib/kube-proxy
+```
 ```sh
 cat <<EOF | sudo tee /var/lib/kube-proxy/kube-proxy-config.yaml
 kind: KubeProxyConfiguration
@@ -208,7 +211,7 @@ mode: "iptables"
 clusterCIDR: "10.200.0.0/16"
 EOF
 ```
-##### Step 4: Create kube-proxy service file:
+#### Step 4: Create kube-proxy service file:
 ```sh
 cat <<EOF | sudo tee /etc/systemd/system/kube-proxy.service
 [Unit]
@@ -226,7 +229,7 @@ WantedBy=multi-user.target
 EOF
 ```
 
-##### Step 5:
+#### Step 5:
 ```sh
 systemctl start kubelet
 systemctl start kube-proxy

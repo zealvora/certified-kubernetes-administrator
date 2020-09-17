@@ -1,10 +1,31 @@
-#### Add following flag in kube-apiserver
+#### Documentation Referred:
 
+https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
+
+#### Step 1: Try connecting to Busybox pod:
 ```sh
---kubelet-preferred-address-types InternalIP 
+kubectl exec -it busybox -- sh
 ```
-#### Restar tkube-apiserver
+#### Step 2: Installing nslookup utility
 ```sh
+yum -y install bind-utils
+nslookup kplabs-cka-worker
+```
+#### Step 3: Modify the Configuration file for API Service
+```sh
+nano /etc/systemd/system/kube-apiserver.service
+```
+
+##### Add following flag:
+```sh
+--kubelet-preferred-address-types InternalIP
+```
+```sh
+systemctl daemon-reload
 systemctl restart kube-apiserver
 ```
-### Do an exec into any of the pods for verification.
+
+#### Step 4: Verifify Connectivity
+```sh
+kubectl exec -it  busybox -- sh
+```

@@ -1,15 +1,16 @@
-##### Pre-Requisite:
+#### Pre-Requisite:
 ```sh
+sudo su -
 setenforce 0
-swapoff -a
+sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
 ```
 
-##### Step 1: Configure the Certificates:
+#### Step 1: Configure the Certificates:
 ```sh
 cd /root/certificates/
 openssl genrsa -out etcd.key 2048
 ```
-##### Note: Replace the value associated with IP.1 in the below step. 
+#### Note: Replace the value associated with IP.1 in the below step.
 
 ```sh
 cat > etcd.cnf <<EOF
@@ -22,32 +23,33 @@ basicConstraints = CA:FALSE
 keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 subjectAltName = @alt_names
 [alt_names]
-IP.1 = SERVER-IP-HERE
-IP.3 = 127.0.0.1
+IP.1 = SERVER-IP
+IP.2 = 127.0.0.1
 EOF
 ```
 ```sh
 openssl req -new -key etcd.key -subj "/CN=etcd" -out etcd.csr -config etcd.cnf
+
 openssl x509 -req -in etcd.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out etcd.crt -extensions v3_req -extfile etcd.cnf -days 1000
 ```
-##### Step 2: Copy the Certificates and Key to /etc/etcd
+#### Step 2: Copy the Certificates and Key to /etc/etcd
 ```sh
 mkdir /etc/etcd
 cp etcd.crt etcd.key ca.crt /etc/etcd
 ```
-##### Step 3: Copy the ETCD and ETCDCTL Binaries to the Path
+#### Step 3: Copy the ETCD and ETCDCTL Binaries to the Path
 ```sh
-cd /root/binaries/kubernetes/server/bin/etcd-v3.4.0-linux-amd64/
-cp etcd etcdctl /usr/bin/
+cd /root/binaries/kubernetes/server/bin/etcd-v3.4.10-linux-amd64/
+cp etcd etcdctl /usr/local/bin/
 ```
 
-##### Step 4: Configure the Systemd File
+#### Step 4: Configure the Systemd File
 
 Add IP Address to Enviornement Variable of Server_IP.
 ```sh
 SERVER_IP=YOUR-IP-ADDRESS-HERE
 ```
-##### Create a service file:
+#### Create a service file:
 ```sh
 cat <<EOF | sudo tee /etc/systemd/system/etcd.service
 [Unit]
@@ -55,7 +57,7 @@ Description=etcd
 Documentation=https://github.com/coreos
 
 [Service]
-ExecStart=/usr/bin/etcd \\
+ExecStart=/usr/local/bin/etcd \\
   --name master-1 \\
   --cert-file=/etc/etcd/etcd.crt \\
   --key-file=/etc/etcd/etcd.key \\
@@ -80,16 +82,15 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-##### Start Service:
+#### Start Service:
 ```sh
 systemctl start etcd
 systemctl status etcd
 systemctl enable etcd
 ```
-##### Verification Commands:
+#### Verification Commands:
 
 When we try with etcdctl --endpoints=https://127.0.0.1:2379 get foo, it gives unknown certificate authority.
-
 ```sh
 ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/etcd/ca.crt --cert=/etc/etcd/etcd.crt --key=/etc/etcd/etcd.key put course "kplabs cka course is awesome"
 ```
