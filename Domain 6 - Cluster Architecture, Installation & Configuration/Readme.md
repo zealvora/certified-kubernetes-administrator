@@ -33,7 +33,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-
 [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-5-install-controller.md>
 [PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-6-configure-scheduler.md>
 [PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-7-validating-cluster-status.md>
-[PlDi]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%207%20-%20Installation%2CConfiguration%2CValidation/k8s-scratch-step-8-configure-worker-node.md>
+[PlDi]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-8-configure-worker-node.md>
 [PlDj]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-9-configure-networking.md>
 [PlDk]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-10-api-kubelet-rbac.md>
 [PlDl]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-11-configure-dns.md>
