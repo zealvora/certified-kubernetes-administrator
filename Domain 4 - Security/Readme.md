@@ -1,8 +1,8 @@
-# Domain 5 - Security
+# Domain - Security
 
-The code mentioned in this document are used in the Certified Kubernetes Administrator 2019 course.
+The code mentioned in this document are used in the Certified Kubernetes Administrator 2020 course.
 
-https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEARNING
+https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-SEP-20
 
 
 # Video-Document Mapper
@@ -11,7 +11,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
 | ------ | ------ |
 | 1 | [Understanding Authentication][PlDa] |
 | 2 | [Creating TLS Certificate for Authentication][PlDb] |
-| 3 | [Understanding Authorization][PlDc] 
+| 3 | [Understanding Authorization][PlDc]
 | 4 | [Access Control based on Namespace][PlDd] |
 | 5 | [ClusterRole and ClusterRoleBinding][PlDe] |
 | 6 | [Kubernetes Secrets][PlDf] |

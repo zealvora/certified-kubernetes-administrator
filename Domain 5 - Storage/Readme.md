@@ -1,8 +1,8 @@
-# Domain 6 - Storage
+# Domain - Storage
 
-The code mentioned in this document are used in the Certified Kubernetes Administrator 2019 course.
+The code mentioned in this document are used in the Certified Kubernetes Administrator 2020 course.
 
-https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEARNING
+https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-SEP-20
 
 
 # Video-Document Mapper
@@ -11,9 +11,9 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
 | ------ | ------ |
 | 1 | [Creating Volumes in Kubernetes][PlDa] |
 | 2 | [PersistentVolume and PersistentVolumeClaim][PlDb] |
-| 3 | [Static vs Dynamic Provisioning of PV][PlDc] 
-| 4 | [ConfigMaps][PlDd] 
-| 5 | [Security Contexts][PlDe] 
+| 3 | [Static vs Dynamic Provisioning of PV][PlDc]
+| 4 | [ConfigMaps][PlDd]
+| 5 | [Security Contexts][PlDe]
 
 
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Storage/pod-volume.yaml>

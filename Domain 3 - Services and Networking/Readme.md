@@ -1,8 +1,8 @@
-# Domain 3 - Networking
+# Domain - Networking
 
-The code mentioned in this document are used in the Certified Kubernetes Administrator 2019 course.
+The code mentioned in this document are used in the Certified Kubernetes Administrator 2020 course.
 
-https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEARNING
+https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-SEP-20
 
 
 # Video-Document Mapper
@@ -11,7 +11,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
 | ------ | ------ |
 | 1 | [Creating our first Service and Endpoint][PlDa] |
 | 2 | [Service Type: NodePort][PlDb] |
-| 3 | [Service Type: Load Balancer][PlDc] 
+| 3 | [Service Type: Load Balancer][PlDc]
 | 4 | [Deploying our first Helm Chart][PlDd] |
 | 5 | [Named Based Virtual Hosting (Ingress)][PlDe] |
 | 6 | [Deploying Nginx Ingress Controller][PlDf] |
@@ -28,4 +28,3 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=LEAR
    [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/deploy-ingress-controller.txt>
    [PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Application%20LifeCycle%20Management/jobs.yaml>
    [PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/kplabs-ingress-default-backend.yamll>
-
