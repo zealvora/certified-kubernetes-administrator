@@ -23,7 +23,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/authentication.md>
    [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/certificate-steps.md>
    [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/authorization.md>
-  [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Security/access-control-namespace.md>
+  [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/access-control-namespace.mdd>
 [PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/cluster-role-binding.md>
    [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/secret-data.md>
-[PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/edit/master/Domain%205%20-%20Security/mounting-secrets.md>
+[PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/mounting-secrets.md>
