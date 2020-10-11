@@ -3,7 +3,7 @@
 - Create a Linux container / Linux server were we can run openssl commands.
 
 ```sh
-       yum -y install openssl nano
+yum -y install openssl nano
 ```
 - Connect the linux box with existing K8s setup.
 
@@ -26,11 +26,7 @@ metadata:
 spec:
   groups:
   - system:authenticated
-  request: 
-     ADD-YOUR-CSR-HERE
-  - digital signature
-  - key encipherment
-  - client auth
+  request: ADD-YOUR-CSR-HERE
   usages:
   - digital signature
   - key encipherment
@@ -38,9 +34,9 @@ spec:
 ```
 ##### Step 4: Apply the Signing Requests:
 ```sh
-kubectl apply -f signingrequest.yaml
+kubectl apply -f csr-requests.yaml
 ```
-Verify with  kubectl get csr
+You can optionally verify with  kubectl get csr
 
 ##### Step 5: Approve the csr
 ```sh
@@ -56,7 +52,7 @@ kubectl config set-credentials zeal --client-certificate=zeal.crt --client-key=z
 ```
 ##### Step 8: Set new Context
 ```sh
-kubectl config set-context zeal-context --cluster do-blr1-kplabs-k8s --user=zeal
+kubectl config set-context zeal-context --cluster [YOUR-CLUSTER-HERE] --user=zeal
 ```
 ##### Step 9: Use Context to Verify
 ```sh

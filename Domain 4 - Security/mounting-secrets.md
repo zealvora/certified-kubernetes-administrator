@@ -19,7 +19,9 @@ spec:
       secretName: firstsecret
 ```
 
-##### secret-env.yaml
+##### Mounting Secrets as Environment Variables
+
+File Name: secret-env.yaml
 
 ```sh
 apiVersion: v1
