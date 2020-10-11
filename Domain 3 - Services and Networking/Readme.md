@@ -20,11 +20,11 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-
 
 
 
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/serviceandendpoints.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/nodeport.yaml>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/loadbalancer.yaml>
-  [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/first-helm-chart.md>
-[PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/kplabs-ingress.yaml>
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/deploy-ingress-controller.txt>
+   [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/serviceandendpoints.md>
+   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/nodeport.yaml>
+   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/loadbalancer.yaml>
+  [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/first-helm-chart.md>
+[PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/kplabs-ingress.yaml>
+   [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/deploy-ingress-controller.txt>
    [PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Application%20LifeCycle%20Management/jobs.yaml>
-   [PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Networking/kplabs-ingress-default-backend.yamll>
+   [PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/kplabs-ingress-default-backend.yaml>
