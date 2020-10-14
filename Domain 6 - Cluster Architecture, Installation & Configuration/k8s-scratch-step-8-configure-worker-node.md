@@ -70,6 +70,7 @@ scp kube-proxy.crt kube-proxy.key kplabs-cka-worker.crt kplabs-cka-worker.key ca
 ```
 - Worker Node:
 ```sh
+cd /tmp
 mv kube-proxy.crt kube-proxy.key kplabs-cka-worker.crt kplabs-cka-worker.key ca.crt /root/certificates
 
 ```
