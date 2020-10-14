@@ -73,6 +73,9 @@ resources:
       - identity: {}
 EOF
 ```
+```sh
+cp encryption-at-rest.yaml /var/lib/kubernetes/encryption-at-rest.yaml
+```
 #### Step 6: Creating Systemd service file:
 
 Systemd file:
