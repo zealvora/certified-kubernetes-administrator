@@ -9,7 +9,7 @@ mkdir /root/binaries
 ```
 ##### Step 2. Install packages
 ```sh
-yum -y install nano wget
+yum -y install nano wget openssl tar gzip
 ```
 ##### Step 3. Download ETCD binary and copy them to the path
 ```sh
