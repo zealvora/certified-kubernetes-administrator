@@ -4,48 +4,41 @@ https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-ku
 
 ##### Step 1: Configure Docker
 ```sh
-yum -y install docker
+apt-get update
+apt-get -y install apt-transport-https ca-certificates curl  gnupg-agent software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+apt-get update && apt-get -y install docker-ce docker-ce-cli
 systemctl start docker
-systemctl enable docker
-```
-##### Step 2: Configure repo
-```sh
-cat <<EOF > /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=Kubernetes
-baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=1
-repo_gpgcheck=1
-gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-EOF
 ```
 
-##### Step 3: Basic Configurations
+##### Step 2: Kernel Parameter Configuration
 ```sh
-setenforce 0
-sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-systemctl enable --now kubelet
-```
-```sh
-cat <<EOF >  /etc/sysctl.d/k8s.conf
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 EOF
+sudo sysctl --system
 ```
+
+##### Step 3:Configuring Repo and Installation
 ```sh
-sysctl --system
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+deb https://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+apt-get update
+apt-get install -y kubelet kubeadm kubectl
+apt-mark hold kubelet kubeadm kubectl
 ```
+
 ##### Step 4: Initialize Cluster with kubeadm
 ```sh
 kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
-##### Step 5:
 
-Will be available after cluster is initialized.
-
-##### Step 6: Install Network Addon (flannel)
+##### Step 5: Install Network Addon (flannel)
 
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
