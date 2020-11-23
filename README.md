@@ -2,11 +2,8 @@
 
 This is a central document which contains all the commands and code files used throughout the video course. 
 
-https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-AUG-20
+https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-NOV-2020	
 
-# Important Note
-
-The GitHub Repository and the course are in the stage of upgradation to be in-tune with the new CKA certifications. You might see many changes within the repository this week.
 
 # Exam Domains
 
