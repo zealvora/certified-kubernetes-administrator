@@ -12,30 +12,26 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-
 | 1 | [Implementing Labels and Selectors][PlDa] |
 | 2 | [Creating our first ReplicaSet][PlDb] |
 | 3 | [Creating our first deployment][PlDc]
-| 4 | [Understanding Liveness Probe][PlDd] |
-| 5 | [Understanding Readiness Probe][PlDe] |
-| 6 | [Creating first Job in Kubernetes][PlDf] |
-| 7 | [CronJobs][PlDg] |
-| 8 | [Generating Deployment Manifests via CLI][PlDh] |
-| 9 | [Understanding DaemonSets][PlDi] |
-| 10 | [Overview of NodeSelector][PlDj] |
-| 11 | [Understanding Node Affinity][PlDk] |
-| 12 | [Pod Affinity and Pod Anti-Affinity][PlDl] |
-| 13 | [Resource Limits][PlDm] |
-| 14 | [Scheduling Pods without a Scheduler][PlDn] |
+| 4 | [Generating Deployment Manifests via CLI][PlDd] |
+| 5 | [Understanding DaemonSets][PlDe] |
+| 6 | [Overview of NodeSelector][PlDf] |
+| 7 | [Understanding Node Affinity][PlDg] |
+| 8 | [Pod Affinity and Pod Anti-Affinity][PlDh] |
+| 9 | [Resource Limits][PlDi] |
+| 10 | [Scheduling Pods without a Scheduler][PlDj] |
+| 11 | [Taints and Tolerations][PlDk] |
+| 12 | [Adapter Pattern][PlDl] |
 
 
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/labels.yaml>
    [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/replicaset.yaml>
    [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/deployment.yaml>
-  [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/livenessprobe.yaml>
-   [PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/readinessprobe.yaml>
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/jobs.yaml>
-   [PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/cronjob.yaml>
-[PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/manifest-cli.md>
-[PlDi]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/daemonset.yaml>
-[PlDj]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/nodeSelector.yaml>
-[PlDk]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/node-affinity-combined.md>
-[PlDl]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/podaffinity-required.yaml>
-[PlDm]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/requests-limits.yaml>
-[PlDn]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/pod-without-scheduler.md>
+[PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/manifest-cli.md>
+[PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/daemonset.yaml>
+[PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/nodeSelector.yaml>
+[PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/node-affinity-combined.md>
+[PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/podaffinity-required.yaml>
+[PlDi]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/requests-limits.yaml>
+[PlDj]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/pod-without-scheduler.md>
+[PlDk]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/taints-tolerations.md>
+[PlDl]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/adapter.yaml>
