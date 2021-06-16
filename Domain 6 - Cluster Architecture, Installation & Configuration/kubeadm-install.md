@@ -13,7 +13,7 @@ apt-get update && apt-get -y install docker-ce docker-ce-cli
 systemctl start docker
 ```
 
-##### Step 2: Kernel Parameter Configuration
+##### Step 2: Kernel Parameter Configuration (only on master node)
 ```sh
 cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
 net.bridge.bridge-nf-call-ip6tables = 1
