@@ -3,7 +3,7 @@
 
 ###  Documentation Link for Resources Discussed in Video
 
-https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.10/#-strong-api-overview-strong-
+https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.19/
 
 https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md#metadata
 
@@ -16,5 +16,5 @@ metadata:
 spec:
   containers:
   -  image: nginx
-     name: democontainern
+     name: democontainer
 ```
