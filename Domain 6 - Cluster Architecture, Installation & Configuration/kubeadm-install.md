@@ -29,7 +29,7 @@ cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 apt-get update
-apt-get install -y kubelet kubeadm kubectl
+apt-get install -y kubelet=1.19.4-00 kubeadm=1.19.4-00 kubectl=1.19.4-00
 apt-mark hold kubelet kubeadm kubectl
 ```
 
@@ -37,7 +37,11 @@ apt-mark hold kubelet kubeadm kubectl
 ```sh
 kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
-
+```sh
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
 ##### Step 5: Install Network Addon (flannel)
 
 ```sh
