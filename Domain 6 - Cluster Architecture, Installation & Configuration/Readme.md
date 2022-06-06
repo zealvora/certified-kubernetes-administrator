@@ -10,6 +10,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-
 | Sr No | Document Link |
 | ------ | ------ |
 | 0 | [Configuring Cluster with kubeadm][PlDa] |
+| 1 | [Upgrading kubeadm Clusters][PlDn] |
 | 1 | [Step 1: Kubernetes From Scratch - Downloading Release Binaries][PlDb] |
 | 2 | [Step 2: Kubernetes From Scratch - Configuring CA][PlDc]
 | 3 | [Step 3: Kubernetes From Scratch - Installing ETCD][PlDd]
@@ -38,3 +39,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-
 [PlDk]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-10-api-kubelet-rbac.md>
 [PlDl]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-11-configure-dns.md>
 [PlDm]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-12-kubelet-preferred-type.md>
+[PlDm]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/kubeadm-upgrade.md>

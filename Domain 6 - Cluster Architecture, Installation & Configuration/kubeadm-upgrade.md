@@ -1,6 +1,6 @@
 ##### Documentation Link:
 
-https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/
 
 ##### Step 1: Setup containerd
 ```sh
@@ -47,7 +47,6 @@ EOF
 ```sh
 sudo sysctl --system
 ```
-
 ##### Step 3: Configuring Repo and Installation
 ```sh
 sudo apt-get update
@@ -58,11 +57,11 @@ echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https:/
 ```sh
 sudo apt-get update
 apt-cache madison kubeadm
-sudo apt-get install -y kubelet=1.24.0-00 kubeadm=1.24.0-00 kubectl=1.24.0-00
+sudo apt-get install -y kubelet=1.22.0-00 kubeadm=1.22.0-00 kubectl=1.22.0-00
 sudo apt-mark hold kubelet kubeadm kubectl
 ```
 
-#### Step 4: Initialize Cluster with kubeadm (Only master node)
+##### Step 4: Initialize Cluster with kubeadm (Only master node)
 ```sh
 kubeadm init --pod-network-cidr=10.244.0.0/16
 ```
@@ -75,14 +74,15 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```sh
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
-##### Step 6: Connect Worker Node (Only worker node)
+##### Step 6: Upgrade Kubeadm Cluster
 ```sh
-kubeadm join 159.89.165.203:6443 --token qmw5dj.ljdh8r74ce3y85ad \
-        --discovery-token-ca-cert-hash sha256:83374ec05088fa7efe9c31cce63326ae7037210ab049048ef08f8c961a048ddf
-```
-#### Step 7: Verification
-```sh
-kubectl get nodes
-kubectl run nginx --image=nginx
-kubectl get pods -o wide
+apt-cache madison kubeadm
+apt-mark unhold kubelet kubectl kubeadm
+apt-get update && apt-get install -y kubelet=1.23.7-00 kubectl=1.23.7-00 kubeadm=1.23.7-00
+apt-mark hold kubelet kubectl
+kubeadm version
+kubeadm upgrade plan
+kubeadm upgrade apply 1.23.0
+systemctl daemon-reload
+systemctl restart kubelet
 ```
