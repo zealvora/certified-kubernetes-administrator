@@ -16,7 +16,7 @@ Note: Replace the IP address from the below snippet in line 5 with your IP addre
   kubectl config set-cluster kubernetes-from-scratch \
     --certificate-authority=ca.crt \
     --embed-certs=true \
-    --server=https://134.209.159.37:6443 \
+    --server=https://${SERVER_IP}:6443 \
     --kubeconfig=admin.kubeconfig
 
   kubectl config set-credentials admin \
@@ -43,7 +43,4 @@ kubectl get componentstatuses
 ```sh
 kubectl create namespace kplabs
 kubectl get namespace kplabs -o yaml
-kubectl get serviceaccount --namespace kplabs
-kubectl get secret --namespace kplabs
-kubectl create serviceaccount demo
 ```

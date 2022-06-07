@@ -1,14 +1,58 @@
-#### Pre-Requisites:
+#### Pre-Requisite 1: Configure Container Runtime. (WORKER NODE)
+
 ```sh
-setenforce 0
-sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-yum -y install docker && systemctl start docker && systemctl enable docker
-yum -y install socat conntrack ipset
+cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
+overlay
+br_netfilter
+EOF
+```
+```sh
+modprobe overlay
+modprobe br_netfilter
+```
+```sh
+cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+EOF
+```
+```sh
+sysctl --system
+```
+```sh
+apt-get install -y containerd
+mkdir -p /etc/containerd
+containerd config default > /etc/containerd/config.toml
+```
+```sh
+nano /etc/containerd/config.toml
+```
+  --> SystemdCgroup = true
+
+```sh
+systemctl restart containerd
+```
+
+```sh
+cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF
+```
+```sh
+sudo sysctl --system
+```
+
+#### Pre-Requisites - 2: (WORKER NODE)
+```sh
+
+apt install -y socat conntrack ipset
 sysctl -w net.ipv4.conf.all.forwarding=1
 cd  /root/binaries/kubernetes/node/bin/
 cp kube-proxy kubectl kubelet /usr/local/bin
 ```
-#### Step 1: Generate Kubelet Certificate for Worker Node.
+#### Step 1: Generate Kubelet Certificate for Worker Node. (MASTER NODE)
 
 Note:
    1. Replace the IP Address and Hostname field in the below configurations according to your enviornement.
@@ -28,7 +72,7 @@ keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 subjectAltName = @alt_names
 [alt_names]
 DNS.1 = kplabs-cka-worker
-IP.1 = WORKER-IP
+IP.1 = 128.199.30.177
 EOF
 ```
 ```sh
@@ -39,7 +83,7 @@ openssl req -new -key kplabs-cka-worker.key -subj "/CN=system:node:kplabs-cka-wo
 openssl x509 -req -in kplabs-cka-worker.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kplabs-cka-worker.crt -extensions v3_req -extfile openssl-kplabs-cka-worker.cnf -days 1000
 ```
 
-#### Step 2: Generate kube-proxy certificate:
+#### Step 2: Generate kube-proxy certificate: (MASTER NODE)
 ```sh
 openssl genrsa -out kube-proxy.key 2048
 openssl req -new -key kube-proxy.key -subj "/CN=system:kube-proxy" -out kube-proxy.csr
@@ -55,34 +99,37 @@ In the demo, we had made used of manual way.
 
 In-case, you want to transfer file from master to worker node, then you can make use of the following approach:
 
-- Worker Node:
+##### - Worker Node:
 ```sh
 nano /etc/ssh/sshd_config
 PasswordAuthentication yes
 systemctl restart sshd
 useradd zeal
-passwd zeal5872#
+passwd zeal
+zeal5872#
 ```
-- Master Node:
+##### - Master Node:
 ```sh
 scp kube-proxy.crt kube-proxy.key kplabs-cka-worker.crt kplabs-cka-worker.key ca.crt zeal@161.35.205.5:/tmp
 
 ```
-- Worker Node:
+##### - Worker Node:
 ```sh
+mkdir /root/certificates
 cd /tmp
 mv kube-proxy.crt kube-proxy.key kplabs-cka-worker.crt kplabs-cka-worker.key ca.crt /root/certificates
 
+
 ```
-#### Step 4: Move Certificates to Specific Location.
+#### Step 4: Move Certificates to Specific Location. (WORKER NODE)
 ```sh
-cd /root/certificates
 mkdir /var/lib/kubernetes
+cd /root/certificates
 cp ca.crt /var/lib/kubernetes
 mkdir /var/lib/kubelet
 mv kplabs-cka-worker.crt  kplabs-cka-worker.key  kube-proxy.crt  kube-proxy.key /var/lib/kubelet/
 ```
-#### Step 5: Generate Kubelet Configuration YAML File:
+#### Step 5: Generate Kubelet Configuration YAML File: (WORKER NODE)
 ```sh
 cat <<EOF | sudo tee /var/lib/kubelet/kubelet-config.yaml
 kind: KubeletConfiguration
@@ -93,39 +140,32 @@ authentication:
   webhook:
     enabled: true
   x509:
-    clientCAFile: "/var/lib/kubernetes/ca.crt"
+      clientCAFile: "/var/lib/kubernetes/ca.crt"
 authorization:
   mode: Webhook
 clusterDomain: "cluster.local"
 clusterDNS:
   - "10.32.0.10"
 runtimeRequestTimeout: "15m"
+cgroupDriver: systemd
 EOF
 ```
-#### Step 6: Generate Systemd service file for kubelet:
+#### Step 6: Generate Systemd service file for kubelet: (WORKER NODE)
 
-Create Systemd file for Kubelet:
 ```sh
 cat <<EOF | sudo tee /etc/systemd/system/kubelet.service
 [Unit]
 Description=Kubernetes Kubelet
 Documentation=https://github.com/kubernetes/kubernetes
-After=docker.service
-Requires=docker.service
+After=containerd.service
+Requires=containerd.service
 
 [Service]
-ExecStart=/usr/local/bin/kubelet \\
-  --config=/var/lib/kubelet/kubelet-config.yaml \\
-  --image-pull-progress-deadline=2m \\
-  --kubeconfig=/var/lib/kubelet/kubeconfig \\
-  --tls-cert-file=/var/lib/kubelet/${HOSTNAME}.crt \\
-  --tls-private-key-file=/var/lib/kubelet/${HOSTNAME}.key \\
-  --network-plugin=cni \\
-  --register-node=true \\
-  --v=2 \\
-  --cgroup-driver=systemd \\
-  --runtime-cgroups=/systemd/system.slice \\
-  --kubelet-cgroups=/systemd/system.slice
+ExecStart=/usr/local/bin/kubelet \
+  --config=/var/lib/kubelet/kubelet-config.yaml \
+  --container-runtime-endpoint=unix:///var/run/containerd/containerd.sock \
+  --kubeconfig=/var/lib/kubelet/kubeconfig \
+  --v=2
 Restart=on-failure
 RestartSec=5
 
@@ -133,7 +173,7 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 ```
-#### Step 7: Generate the Kubeconfig file for Kubelet
+#### Step 7: Generate the Kubeconfig file for Kubelet (WORKER NODE)
 
 ```sh
 cd /var/lib/kubelet
@@ -167,7 +207,7 @@ mv kplabs-cka-worker.kubeconfig kubeconfig
 ```
 ### Part 2 - Kube-Proxy
 
-#### Step 1: Copy Kube Proxy Certificate to Directory:
+#### Step 1: Copy Kube Proxy Certificate to Directory:  (WORKER NODE)
 ```sh
 mkdir /var/lib/kube-proxy
 
@@ -198,7 +238,7 @@ mkdir /var/lib/kube-proxy
 ```sh
 mv kube-proxy.kubeconfig /var/lib/kube-proxy/kubeconfig
 ```
-#### Step 3: Generate kube-proxy configuration file:
+#### Step 3: Generate kube-proxy configuration file: (WORKER NODE)
 ```sh
 cd /var/lib/kube-proxy
 ```
@@ -212,7 +252,7 @@ mode: "iptables"
 clusterCIDR: "10.200.0.0/16"
 EOF
 ```
-#### Step 4: Create kube-proxy service file:
+#### Step 4: Create kube-proxy service file: (WORKER NODE)
 ```sh
 cat <<EOF | sudo tee /etc/systemd/system/kube-proxy.service
 [Unit]
@@ -230,10 +270,15 @@ WantedBy=multi-user.target
 EOF
 ```
 
-#### Step 5:
+#### Step 5: (WORKER NODE)
 ```sh
 systemctl start kubelet
 systemctl start kube-proxy
 systemctl enable kubelet
 systemctl enable kube-proxy
+```
+
+#### Step 6: (MASTER NODE)
+```sh
+kubectl get nodes
 ```

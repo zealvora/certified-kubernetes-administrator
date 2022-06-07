@@ -53,7 +53,7 @@ Documentation=https://github.com/kubernetes/kubernetes
 
 [Service]
 ExecStart=/usr/local/bin/kube-controller-manager \\
---address=0.0.0.0 \\
+--bind-address=0.0.0.0 \\
 --service-cluster-ip-range=10.32.0.0/24 \\
 --cluster-cidr=10.200.0.0/16 \\
 --kubeconfig=/var/lib/kubernetes/kube-controller-manager.kubeconfig \\

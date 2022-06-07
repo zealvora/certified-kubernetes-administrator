@@ -1,5 +1,6 @@
 #### 1. Generate Certificates:
 ```sh
+cd /root/certificates
 openssl genrsa -out kube-scheduler.key 2048
 openssl req -new -key kube-scheduler.key -subj "/CN=system:kube-scheduler" -out kube-scheduler.csr
 openssl x509 -req -in kube-scheduler.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kube-scheduler.crt -days 1000
@@ -32,7 +33,7 @@ openssl x509 -req -in kube-scheduler.csr -CA ca.crt -CAkey ca.key -CAcreateseria
 ```sh
 cp kube-scheduler.kubeconfig /var/lib/kubernetes/
 ```
-#### 4: Configuring SystemD service:
+#### 4: Configuring systemd service:
 ```sh
 cat <<EOF | sudo tee /etc/systemd/system/kube-scheduler.service
 [Unit]

@@ -26,5 +26,4 @@ kubectl apply -f coredns.yaml
 kubectl get pods -n kube-system
 kubectl exec -it busybox -- sh
 nslookup google.com
-nslookup kubernetes
 ```
