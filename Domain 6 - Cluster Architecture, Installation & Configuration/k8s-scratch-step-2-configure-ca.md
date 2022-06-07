@@ -17,3 +17,11 @@ openssl req -new -key ca.key -subj "/CN=KUBERNETES-CA" -out ca.csr
 ```sh
 openssl x509 -req -in ca.csr -signkey ca.key -CAcreateserial  -out ca.crt -days 1000
 ```
+##### 4. See Contents of Certificate
+```sh
+openssl x509 -in ca.crt -text -noout
+```
+##### 5. Remove CSR
+```sh
+rm -f ca.csr
+```
