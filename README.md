@@ -1,9 +1,19 @@
 # Certified Kubernetes Administrator - KPLABS Course
 
-This is a central document which contains all the commands and code files used throughout the video course. 
+This Git repository contains all the code files used throughout the Certified Kubernetes Administrator 2022 course by Zeal Vora.
 
-https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-NOV-2020	
+https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=700DA06BF8A30E27AC7E
 
+We also have a new Discord community for any support related discussion as well as to connect to other students doing the same course. Feel free to join the community.
+
+```sh
+http://kplabs.in/chat
+```
+Welcome to the community again and we look forward to see you certified! :)
+
+<p align="center">
+  <img width="460" height="300" src="https://i.ibb.co/b3jFkkk/discord-terraform.png">
+</p>
 
 # Exam Domains
 
@@ -11,7 +21,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-
 | ------ | ------ |
 | 1 | [Core Concepts][PlDa] |
 | 2 | [Workloads & Scheduling][PlDb] |
-| 3 | [Services and Networking][PlDc] 
+| 3 | [Services and Networking][PlDc]
 | 4 | [Security][PlDe] |
 | 5 | [Storage][PlDf] |
 | 6 | [Cluster Architecture, Installation & Configuration][PlDg] |

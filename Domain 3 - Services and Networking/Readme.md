@@ -1,8 +1,8 @@
 # Domain - Networking
 
-The code mentioned in this document are used in the Certified Kubernetes Administrator 2020 course.
+The code mentioned in this document are used in the Certified Kubernetes Administrator 2022 course.
 
-https://www.udemy.com/course/certified-kubernetes-administrator/?couponCode=CKA-SEP-20
+https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=700DA06BF8A30E27AC7E
 
 
 # Video-Document Mapper
