@@ -1,15 +1,17 @@
 #### Reference Documentation mentioned in the video:
 
-https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/
-
 https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
 
-#### Pre:Requisite Step: Move the kube-apiserver binary to /usr/bin directory.
+https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
+
+#### Pre:Requisite Step: Move the kube-apiserver binary to /usr/local/bin directory.
 
 ```sh
 cd /root/binaries/kubernetes/server/bin/
 cp kube-apiserver /usr/local/bin/
 ```
+
+Ensure that the SERVER_IP variable is still set.
 
 #### Step 1. Generate Configuration File for CSR Creation.
 ```sh
@@ -52,6 +54,7 @@ openssl x509 -req -in service-account.csr -CA ca.crt -CAkey ca.key -CAcreateseri
 ```sh
 mkdir /var/lib/kubernetes
 cp etcd.crt etcd.key ca.crt kube-api.key kube-api.crt service-account.crt service-account.key /var/lib/kubernetes
+ls /var/lib/kubernetes
 ```
 
 #### Step 5: Creating Encryption key and Configuration

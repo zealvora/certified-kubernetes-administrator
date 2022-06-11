@@ -29,12 +29,23 @@
   kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')&env.IPALLOC_RANGE=10.200.0.0/16"
   ```
 
+  #### Note
+
+  In-case if the worker node continues to be in NotReady status even after few minutes, you can restart the kubelet in the worker node
+ ```sh
+  systemctl restart kubelet
+ ```
+
   #### Step 5: Verification
   ##### Master Node
   ```sh
   kubectl get nodes
   kubectl run nginx --image=nginx
   ```
+  #### Note
+
+  In-case if you have restarted kubelet and you run the kubectl run nginx to create a POD from master node, it can happen that Status will show Error message. In such-case, just wait for 2-3 minutes and the error would automatically go away and will change to Running.
+
   ##### Worker Node
   ```sh
   apt install net-tools
@@ -49,4 +60,9 @@ kubectl exec nginx -- ls
 ```sh
 nano /etc/hosts
 ```
-128.199.30.177 kplabs-cka-worker
+```sh
+142.93.218.230 kplabs-cka-worker
+```
+```sh
+kubectl exec nginx -- ls
+```

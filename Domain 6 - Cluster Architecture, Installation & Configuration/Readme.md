@@ -23,8 +23,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 11 | [Step 10: Kubernetes From Scratch - API to Kubelet RBAC][PlDk]
 | 12 | [Step 11: Kubernetes From Scratch - Configuring DNS ][PlDl]
 | 13 | [Step 12: Kubernetes From Scratch - Kubelet Preferred Instance Type ][PlDm]
-
-
+| 14 | [Breakdown Learning][PlDo]
+| 15 | [ETCD Backup and Restore][PlDp]
 
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/kubeadm-install.md>
    [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-1-download-release-binaries.md>
@@ -40,3 +40,5 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDl]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-11-configure-dns.md>
 [PlDm]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-12-kubelet-preferred-type.md>
 [PlDn]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/kubeadm-upgrade.md>
+[PlDo]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/breakdown-learning.md>
+[PlDp]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/etcd-backup-restore.md>

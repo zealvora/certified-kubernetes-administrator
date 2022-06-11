@@ -1,7 +1,12 @@
+#### Documentation Referred:
+
+https://etcd.io/docs/v3.5/op-guide/configuration/
+
 #### Pre-Requisite: Set SERVER-IP variable
-
-SERVER_IP=159.89.171.150 (change this to your IP)
-
+```sh
+SERVER_IP=139.59.28.67 (change this to your IP)
+echo $SERVER_IP
+```
 #### Step 1: Configure the Certificates:
 ```sh
 cd /root/certificates/
