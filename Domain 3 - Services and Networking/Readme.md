@@ -9,7 +9,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 1 | [Creating our first Service and Endpoint][PlDa] |
+| 1 | [Creating Service and Endpoints][PlDa] |
+| 2 | [Using Selectors for Service Endpoints][PlDi] |
 | 2 | [Service Type: NodePort][PlDb] |
 | 3 | [Service Type: Load Balancer][PlDc]
 | 4 | [Deploying our first Helm Chart][PlDd] |
