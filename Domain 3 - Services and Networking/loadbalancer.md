@@ -4,7 +4,7 @@
 kubectl run lb-pod --labels="type=loadbalanced" --image=nginx
 kubectl get pods --show-labels
 ```
-#### Step 2: Create NodePort service
+#### Step 2: Create LoadBalancer service
 ```sh
 nano elb-service.yaml
 ```

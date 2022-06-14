@@ -34,3 +34,9 @@ kubectl get nodes -o wide
 ```
 
 Copy the Public IP of Worker Node and Paste it in browser along with NodePort
+
+#### Step 5: Delete the Resources
+```sh
+kubectl delete pod nodeport-pod
+kubectl delete -f nodeport.yaml
+```
