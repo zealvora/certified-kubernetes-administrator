@@ -1,3 +1,7 @@
+#### Documentation Referred:
+
+https://kubernetes.io/docs/concepts/services-networking/service/
+
 #### Step 1: Creating Backend PODS
 ```sh
 kubectl run backend-pod-1 --image=nginx
@@ -29,7 +33,11 @@ spec:
    - port: 8080
      targetPort: 80
 ```
-
+```
+kubectl apply -f service.yaml
+kubectl get service
+kubectl describe service kplabs-service
+```
 #### Step 5: Associate Endpoints with Service
 ```sh
 nano endpoint.yaml
@@ -45,11 +53,13 @@ subsets:
     ports:
       - port: 80
 ```
-
+```sh
+kubectl apply -f endpoint.yaml
+```
 #### Step 6: Test the Connection
 ```sh
 kubectl exec -it frontend-pod -- bash
-curl <SERVICE-IP:PORT>
+curl <SERVICE-IP:8080>
 ```
 
 #### Step 7: Delete the Created Resources
