@@ -11,13 +11,13 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | ------ | ------ |
 | 1 | [Creating Service and Endpoints][PlDa] |
 | 2 | [Using Selectors for Service Endpoints][PlDi] |
-| 2 | [Service Type: NodePort][PlDb] |
-| 3 | [Service Type: Load Balancer][PlDc]
-| 4 | [Deploying our first Helm Chart][PlDd] |
-| 5 | [Named Based Virtual Hosting (Ingress)][PlDe] |
-| 6 | [Deploying Nginx Ingress Controller][PlDf] |
-| 7 | [Understanding Ingress Resource and Ingress Controllers][PlDg] |
-| 8 | [Configuring Default BackEnd for Ingresss][PlDh] |
+| 3 | [Service Type: NodePort][PlDb] |
+| 4 | [Service Type: Load Balancer][PlDc]
+| 5 | [Deploying our first Helm Chart][PlDd] |
+| 6 | [Named Based Virtual Hosting (Ingress)][PlDe] |
+| 7 | [Deploying Nginx Ingress Controller][PlDf] |
+| 8 | [Understanding Ingress Resource and Ingress Controllers][PlDg] |
+| 9 | [Configuring Default BackEnd for Ingresss][PlDh] |
 
 
 
@@ -29,3 +29,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
    [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/deploy-ingress-controller.txt>
    [PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Application%20LifeCycle%20Management/jobs.yaml>
    [PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/kplabs-ingress-default-backend.yaml>
+   [PlDi]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/service-selector-yaml>
