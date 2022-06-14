@@ -1,5 +1,5 @@
 
-#### Step 1: Creating Daemonsets
+#### Step 1: Creating Deployments
 ```sh
 nano demo-deployment.yaml
 ```
