@@ -1,4 +1,4 @@
-# Domain - Networking
+# Domain - Services and Networking
 
 The code mentioned in this document are used in the Certified Kubernetes Administrator 2022 course.
 
