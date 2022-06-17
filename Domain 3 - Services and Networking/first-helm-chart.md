@@ -1,34 +1,43 @@
-### Deploying our first Helm chart
+### Artifact Hub Page:
 
-##### 1. Link to download Helm
+https://artifacthub.io/
 
-https://github.com/helm/helm/releases 
 
-##### 2. Generic Commands - Installing and Configuring Helm:
+## Deploying Jenkins Helm Chart
+
+https://artifacthub.io/packages/helm/jenkinsci/jenkins
+
+##### Step 1. Configure and Install Jenkins Helm Chart
 
 ```sh
-yum -y install nano wget gzip tar
-gunzip helm-v2.14.3-linux-amd64.tar.gz
-tar -xvf helm-v2.14.3-linux-amd64.tar
-cd linux-amd64/
-mv helm /usr/bin/
-mv tiller /usr/bin/
-tiller (run this from second terminal session)
-export HELM_HOST=localhost:44134
-helm init --client-only
+helm repo add jenkins https://charts.jenkins.io
+helm repo update
+helm install my-jenkins jenkins/jenkins
+```
+##### Step 2. Verify the List of Releases
+
+```sh
+helm list
+```
+##### Step 3. Uninstall Jenkins Helm Chart
+
+```sh
+helm uninstall my-jenkins
 ```
 
-##### 3. Link to Helm Charts:
+## Deploying WordPress Helm Chart (Run this in Big Node)
 
-https://github.com/helm/charts/tree/master/stable/
+https://artifacthub.io/packages/helm/bitnami/wordpress
 
-##### 4. Installing Wordpress Helm Chart
+##### Step 1. Configure and Install Wordpress Helm Chart
 
 ```sh
-helm install stable/wordpress
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install my-release bitnami/wordpress
 ```
-##### 5. Deleting Helm Chart
+
+##### Step 2. Uninstall Wordpress Helm Chart
 
 ```sh
-helm delete kind-sabertooth --purge 
+helm uninstall my-release
 ```

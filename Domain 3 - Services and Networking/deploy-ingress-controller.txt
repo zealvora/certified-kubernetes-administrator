@@ -1,1 +1,0 @@
-helm install stable/nginx-ingress --name nginx-ingress --set controller.publishService.enabled=true
