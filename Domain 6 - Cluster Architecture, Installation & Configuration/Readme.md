@@ -25,8 +25,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 13 | [Step 12: Kubernetes From Scratch - Kubelet Preferred Instance Type ][PlDm]
 | 14 | [Breakdown Learning][PlDo]
 | 15 | [ETCD Backup and Restore][PlDp]
-| 16 | [Understanding Network Policies - Part 01][PlDp]
-| 17 | [Understanding Network Policies - Part 02][PlDp]
+| 16 | [Understanding Network Policies - Part 01][PlDq]
+| 17 | [Understanding Network Policies - Part 02][PlDr]
 
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/kubeadm-install.md>
    [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-1-download-release-binaries.md>
