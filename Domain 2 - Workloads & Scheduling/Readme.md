@@ -16,11 +16,10 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 5 | [Understanding DaemonSets][PlDe] |
 | 6 | [Overview of NodeSelector][PlDf] |
 | 7 | [Understanding Node Affinity][PlDg] |
-| 8 | [Pod Affinity and Pod Anti-Affinity][PlDh] |
-| 9 | [Resource Limits][PlDi] |
-| 10 | [Scheduling Pods without a Scheduler][PlDj] |
-| 11 | [Taints and Tolerations][PlDk] |
-| 12 | [Adapter Pattern][PlDl] |
+| 8 | [Resource Limits][PlDi] |
+| 9 | [Scheduling Pods without a Scheduler][PlDj] |
+| 10 | [Taints and Tolerations][PlDk] |
+| 11 | [Adapter Pattern][PlDl] |
 
 
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/labels.yaml>

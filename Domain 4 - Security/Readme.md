@@ -9,21 +9,19 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 1 | [Understanding Authentication][PlDa] |
-| 2 | [Creating TLS Certificate for Authentication][PlDb] |
-| 3 | [Understanding Authorization][PlDc]
-| 4 | [Access Control based on Namespace][PlDd] |
-| 5 | [ClusterRole and ClusterRoleBinding][PlDe] |
-| 6 | [Kubernetes Secrets][PlDf] |
-| 7 | [Mounting Secrets Inside Pods][PlDg] |
+| 1 | [Authenticating with K8s using Tokens][PlDa] |
+| 2 | [Overview of Authorization][PlDb]
+| 3 | [ClusterRole and ClusterRole Bindings][PlDc]
+| 4 | [Creating TLS Certificate for Authentication][PlDd] |
+| 8 | [Kubernetes Secrets][PlDe] |
+| 9 | [Mounting Secrets Inside Pods][PlDf] |
 
 
 
 
    [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/authentication.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/certificate-steps.md>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/authorization.md>
-  [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/access-control-namespace.md>
-[PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/cluster-role-binding.md>
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/secret-data.md>
-[PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/mounting-secrets.md>
+   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/authorization.md>
+   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/cluster-permissions.md>
+   [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/certificate-steps.md>
+   [PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/secret-data.md>
+   [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/mounting-secrets.md>
