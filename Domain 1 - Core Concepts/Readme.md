@@ -6,16 +6,23 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 # Video-Document Mapper
 
+
 | Sr No | Document Link |
 | ------ | ------ |
 | 1 | [Installing & Configuring kubectl for Linux][PlDa] |
 | 2 | [Configuring Kubernetes in Minikube in Windows][PlDb] |
 | 3 | [Configuring Kubernetes in Minikube in Linux][PlDc]
-| 4 | [Creating First POD Configuration in YAML][PlDd] |
+| 4 | [Understanding PODS][PlDd] |
+| 5 | [Creating First POD Configuration in YAML][PlDe] |
+| 6 | [Understanding Commands and Arguments in Kubernetes][PlDf] |
+| 7 | [Exposing Ports for PODS][PlDg] |
+| 8 | [Generating Pod Manifests via CLI][PlDh] |
 
-
-
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%201%20-%20Core%20Concepts/install-kubectl.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%201%20-%20Core%20Concepts/minikube-install-windows.md>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%201%20-%20Core%20Concepts/minikube-install-linux.md>
-   [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%201%20-%20Core%20Concepts/first-pod-yaml.md>
+   [PlDa]: <./install-kubectl.md>
+   [PlDb]: <./minikube-install-linux.md>
+   [PlDc]: <./minikube-install-windows.md>
+   [PlDd]: <./basic-pods.md>
+   [PlDe]: <./first-pod-yaml.md>
+   [PlDf]: <./cmd-args.md>
+   [PlDg]: <./expose-pods.md>
+   [PlDh]: <./pod-manifest-cli.md>
