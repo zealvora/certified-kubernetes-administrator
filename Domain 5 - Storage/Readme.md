@@ -16,8 +16,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 5 | [Security Contexts][PlDe]
 
 
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Storage/pod-volume.yaml>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Storage/pvandpvc.md>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Storage/dynamic-pvc.md>
-   [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Storage/pod-configmap.yaml>
-   [PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%205%20-%20Storage/pod-securitycontext.yaml>
+   [PlDa]: <./pod-volume.yaml>
+   [PlDb]: <./pvandpvc.md>
+   [PlDc]: <./dynamic-pvc.md>
+   [PlDd]: <./pod-configmap.yaml>
+   [PlDe]: <./pod-securitycontext.yaml>

@@ -28,21 +28,21 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 16 | [Understanding Network Policies - Part 01][PlDq]
 | 17 | [Understanding Network Policies - Part 02][PlDr]
 
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/kubeadm-install.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-1-download-release-binaries.md>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-2-configure-ca.md>
-[PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-3-install-etcd.md>
-[PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-4-configure-apiserver.md>
-[PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-5-install-controller.md>
-[PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-6-configure-scheduler.md>
-[PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-7-validating-cluster-status.md>
-[PlDi]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-8-configure-worker-node.md>
-[PlDj]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-9-configure-networking.md>
-[PlDk]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-10-api-kubelet-rbac.md>
-[PlDl]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-11-configure-dns.md>
-[PlDm]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/k8s-scratch-step-12-kubelet-preferred-type.md>
-[PlDn]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/kubeadm-upgrade.md>
-[PlDo]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/breakdown-learning.md>
-[PlDp]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/etcd-backup-restore.md>
-[PlDq]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/netpol-01.md>
-[PlDr]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%206%20-%20Cluster%20Architecture%2C%20Installation%20%26%20Configuration/netpol02.md>
+[PlDa]: <./kubeadm-install.md>
+[PlDb]: <./k8s-scratch-step-1-download-release-binaries.md>
+[PlDc]: <./k8s-scratch-step-2-configure-ca.md>
+[PlDd]: <./k8s-scratch-step-3-install-etcd.md>
+[PlDe]: <./k8s-scratch-step-4-configure-apiserver.md>
+[PlDf]: <./k8s-scratch-step-5-install-controller.md>
+[PlDg]: <./k8s-scratch-step-6-configure-scheduler.md>
+[PlDh]: <./k8s-scratch-step-7-validating-cluster-status.md>
+[PlDi]: <./k8s-scratch-step-8-configure-worker-node.md>
+[PlDj]: <./k8s-scratch-step-9-configure-networking.md>
+[PlDk]: <./k8s-scratch-step-10-api-kubelet-rbac.md>
+[PlDl]: <./k8s-scratch-step-11-configure-dns.md>
+[PlDm]: <./k8s-scratch-step-12-kubelet-preferred-type.md>
+[PlDn]: <./kubeadm-upgrade.md>
+[PlDo]: <./breakdown-learning.md>
+[PlDp]: <./etcd-backup-restore.md>
+[PlDq]: <./netpol-01.md>
+[PlDr]: <./netpol02.md>

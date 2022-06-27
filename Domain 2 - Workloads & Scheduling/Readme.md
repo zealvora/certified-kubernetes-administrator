@@ -22,15 +22,15 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 11 | [Adapter Pattern][PlDl] |
 
 
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/labels.yaml>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/replicaset.yaml>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/deployment.yaml>
-[PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/manifest-cli.md>
-[PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/daemonset.yaml>
-[PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/nodeSelector.yaml>
-[PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/node-affinity-combined.md>
-[PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/podaffinity-required.yaml>
-[PlDi]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/requests-limits.yaml>
-[PlDj]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/pod-without-scheduler.md>
-[PlDk]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/taints-tolerations.md>
-[PlDl]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%202%20-%20Workloads%20%26%20Scheduling/adapter.yaml>
+[PlDa]: <./labels.yaml>
+[PlDb]: <./replicaset.yaml>
+[PlDc]: <./deployment.yaml>
+[PlDd]: <./manifest-cli.md>
+[PlDe]: <./daemonset.yaml>
+[PlDf]: <./nodeSelector.yaml>
+[PlDg]: <./node-affinity-combined.md>
+[PlDh]: <./podaffinity-required.yaml>
+[PlDi]: <./requests-limits.yaml>
+[PlDj]: <./pod-without-scheduler.md>
+[PlDk]: <./taints-tolerations.md>
+[PlDl]: <./adapter.yaml>

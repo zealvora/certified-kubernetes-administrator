@@ -19,9 +19,9 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 
 
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/authentication.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/authorization.md>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/cluster-permissions.md>
-   [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/certificate-steps.md>
-   [PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/secret-data.md>
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%204%20-%20Security/mounting-secrets.md>
+   [PlDa]: <./authentication.md>
+   [PlDb]: <./authorization.md>
+   [PlDc]: <./cluster-permissions.md>
+   [PlDd]: <./certificate-steps.md>
+   [PlDe]: <./secret-data.md>
+   [PlDf]: <./mounting-secrets.md>

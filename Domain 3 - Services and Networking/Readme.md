@@ -24,15 +24,15 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 
 
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/serviceandendpoints.md>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/service-selector.md>
-   [PlDc]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/nodeport.md>
-   [PlDd]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/loadbalancer.md>
-   [PlDe]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/service-manifest-cli.md>
-   [PlDf]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/install-helm.md>      
-  [PlDg]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/first-helm-chart.md>
-[PlDh]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/ingress.md>
-[PlDi]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/deploy-ingress-controller.md>
-[PlDj]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/namespace.md>
-[PlDk]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/service-account.md>
-[PlDl]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%203%20-%20Services%20and%20Networking/named-port.md>
+[PlDa]: <./serviceandendpoints.md>
+[PlDb]: <./service-selector.md>
+[PlDc]: <./nodeport.md>
+[PlDd]: <./loadbalancer.md>
+[PlDe]: <./service-manifest-cli.md>
+[PlDf]: <./install-helm.md>      
+[PlDg]: <./first-helm-chart.md>
+[PlDh]: <./ingress.md>
+[PlDi]: <./deploy-ingress-controller.md>
+[PlDj]: <./namespace.md>
+[PlDk]: <./service-account.md>
+[PlDl]: <./named-port.md>

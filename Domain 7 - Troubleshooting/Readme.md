@@ -14,5 +14,5 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 
 
-   [PlDa]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%209%20-%20Troubleshooting/application-failure.yaml>
-   [PlDb]: <https://github.com/zealvora/certified-kubernetes-administrator/blob/master/Domain%209%20-%20Troubleshooting/application-failure-solution.yaml>
+   [PlDa]: <./application-failure.yaml>
+   [PlDb]: <./application-failure-solution.yaml>
