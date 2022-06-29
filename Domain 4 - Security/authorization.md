@@ -52,7 +52,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 ```sh
-kubectl apply rolebinding.yaml
+kubectl apply -f rolebinding.yaml
 ```
 ```sh
 kubectl get rolebinding

@@ -11,7 +11,10 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | ------ | ------ |
 | 1 | [Implementing Labels and Selectors][PlDa] |
 | 2 | [Creating our first ReplicaSet][PlDb] |
-| 3 | [Creating our first deployment][PlDc]
+| 3 | [Creating our first Deployment][PlDc]
+| 4 | [Rolling Back Deployments][PlDc]
+| 5 | [maxSurge and maxUnavailable][PlDc]
+| 6 | [Important Pointers - Deployments][PlDc]
 | 4 | [Generating Deployment Manifests via CLI][PlDd] |
 | 5 | [Understanding DaemonSets][PlDe] |
 | 6 | [Overview of NodeSelector][PlDf] |
@@ -25,6 +28,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDa]: <./labels.yaml>
 [PlDb]: <./replicaset.yaml>
 [PlDc]: <./deployment.yaml>
+[PlDc]: <./rollback-deployment.md>
 [PlDd]: <./manifest-cli.md>
 [PlDe]: <./daemonset.yaml>
 [PlDf]: <./nodeSelector.yaml>
