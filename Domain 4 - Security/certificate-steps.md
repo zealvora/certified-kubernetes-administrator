@@ -1,4 +1,4 @@
-##### Pre-Requisite:
+#### Pre-Requisite:
 
 Connect the linux box with existing K8s setup.
 
@@ -9,17 +9,30 @@ chmod +x kubectl
 
 mv kubectl /usr/local/bin
 ```
-##### Step 1: Create a new private key  and CSR
+Make sure to also copy the contents of your kubeconfig file from local laptop to server
+```sh
+mkdir ~/.kube
+nano ~/.kube/config
+````
+```sh
+kubectl get pods
+```
+#### Step 1: Create a new private key  and CSR
+
+```sh
+mkdir /root/certificates
+cd /root/certificates
+```
 ```sh
 openssl genrsa -out zeal.key 2048
 openssl req -new -key zeal.key -out zeal.csr -subj "/CN=zeal/O=kplabs"
 ```
-##### Step 2: Encode the csr
+#### Step 2: Encode the csr
 ```sh
 cat zeal.csr | base64 | tr -d '\n'
 ```
 
-##### Step 3: Generate the Kubernetes Signing Request
+#### Step 3: Generate the Kubernetes Signing Request
 ```sh
 nano csr-requests.yaml
 ```
@@ -38,29 +51,29 @@ spec:
   - key encipherment
   - client auth
 ```
-##### Step 4: Apply the Signing Requests:
+#### Step 4: Apply the Signing Requests:
 ```sh
 kubectl apply -f csr-requests.yaml
 ```
 You can optionally verify with  kubectl get csr
 
-##### Step 5: Approve the csr
+#### Step 5: Approve the csr
 ```sh
 kubectl certificate approve zeal-csr
 ```
-##### Step 6: Download the Certificate from csr
+#### Step 6: Download the Certificate from csr
 ```sh
 kubectl get csr zeal-csr -o jsonpath='{.status.certificate}' | base64 -d > zeal.crt
 ```
-##### Step 7: Create a new context
+#### Step 7: Create a new context
 ```sh
 kubectl config set-credentials zeal --client-certificate=zeal.crt --client-key=zeal.key
 ```
-##### Step 8: Set new Context
+#### Step 8: Set new Context
 ```sh
 kubectl config set-context zeal-context --cluster [YOUR-CLUSTER-HERE] --user=zeal
 ```
-##### Step 9: Use Context to Verify
+#### Step 9: Use Context to Verify
 ```sh
 kubectl --context=zeal-context get pods
 ```
