@@ -27,7 +27,7 @@ cd /root/certificates
 openssl genrsa -out zeal.key 2048
 openssl req -new -key zeal.key -out zeal.csr -subj "/CN=zeal/O=kplabs"
 ```
-#### Step 2: Encode the csr
+#### Step 2: Decode the csr
 ```sh
 cat zeal.csr | base64 | tr -d '\n'
 ```
