@@ -1,4 +1,4 @@
-# Domain - Troubleshooting Application Failure
+# Domain - Logging and Monitoring
 
 The code mentioned in this document are used in the Certified Kubernetes Administrator 2022 course.
 
