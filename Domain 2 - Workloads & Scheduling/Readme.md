@@ -27,7 +27,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 [PlDa]: <./labels.yaml>
 [PlDb]: <./replicaset.yaml>
-[PlDc]: <./deployment.yaml>
+[PlDc]: <./deployment.md>
 [PlDc]: <./rollback-deployment.md>
 [PlDd]: <./manifest-cli.md>
 [PlDe]: <./daemonset.yaml>
