@@ -23,10 +23,13 @@
   cd /opt/cni/bin
   tar -xzvf cni-plugins-linux-amd64-v1.1.1.tgz
   ```
-  #### Step 4: Configuring Weave (Run this step on Master Node)
+  #### Step 4: Configuring Weave (Run this step on Master Node) - IMPORTANT
+  
+  The cloud.weave.works command that was used in the video will no longer work as the website is now down. Instead you can use the following command to setup networking.
+  
 
   ```sh
-  kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')&env.IPALLOC_RANGE=10.200.0.0/16"
+ kubectl apply -f https://github.com/weaveworks/weave/releases/download/v2.8.1/weave-daemonset-k8s-1.11.yaml
   ```
 
   #### Note
