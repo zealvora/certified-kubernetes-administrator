@@ -4,7 +4,7 @@ https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument
 
 #### Create POD without any commands or arguments.
 
-##### newpod.yaml
+##### commands.yaml
 
 ```sh
 apiVersion: v1
