@@ -52,8 +52,8 @@ sudo sysctl --system
 ```sh
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
-sudo curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
-echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-archive-keyring.gpg
+echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 ```
 ```sh
 sudo apt-get update
@@ -64,7 +64,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 #### Step 4: Initialize Cluster with kubeadm (Only master node)
 ```sh
-kubeadm init --pod-network-cidr=10.244.0.0/16
+kubeadm init --pod-network-cidr=10.244.0.0/16 --kubernetes-version=1.24.0
 ```
 ```sh
 mkdir -p $HOME/.kube
