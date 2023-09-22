@@ -40,3 +40,7 @@ subjects:
     name: kube-apiserver
 EOF
 ```
+
+```sh
+kubectl exec nginx -- ls
+```
