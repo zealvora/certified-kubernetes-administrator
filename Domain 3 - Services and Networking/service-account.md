@@ -1,32 +1,33 @@
-#### List service account in default namespace
+#### List service account in all namespaces
 ```sh
-kubectl get serviceaccount
+kubectl get serviceaccount --all-namespaces
 ```
-#### Create New Namespace and Verify Service Account Creation
+
+#### Create a Test App Pod
 ```sh
-kubectl create namespace kplabs
-kubectl get serviceaccount -n kplabs
+kubectl run app-pod --image=nginx 
+kubectl get pods
 ```
-#### Verify Secret Details
+#### Verify Namespace associated with Pod
 ```sh
-kubectl get secret -n kplabs
-kubectl get sa default -o yaml
+kubectl describe pod app-pod
 ```
-#### Create a New POD
+#### Verify Mounted Token in Pod
 ```sh
-kubectl run nginx --image=nginx
-kubectl exec -it nginx -- bash
-cd /run/secrets/kubernetes.io/serviceaccount
-ls -l
+kubectl exec -it app-pod -- bash
+
+cd /var/run/secrets/kubernetes.io/serviceaccount/
+
+ls
+
 cat token
 ```
-#### Verify Service Account Name for POD
+#### Connect to Kubernetes Cluster using Token
 ```sh
-kubectl get pod nginx -o yaml
-```
-#### Create New Service Account & Associate POD
-```sh
-kubectl create sa kplabs
-kubectl run nginx-sa --image=nginx --serviceaccount="kplabs"
-kubectl get pod nginx-sa -o yaml
+token=$(cat token)
+echo $token
+
+kubectl cluster-info (from outside of Pod)
+
+curl -k -H "Authorization: Bearer $token" https://control-plane-url-here/api/v1
 ```
