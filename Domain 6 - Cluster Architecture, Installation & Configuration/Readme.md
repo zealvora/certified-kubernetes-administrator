@@ -9,7 +9,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 0 | [Configuring Cluster with kubeadm][PlDa] |
+| 0a | [kubeadm - Setting Up Kubernetes Master Node][PlDa0] |
+| 0b | [kubeadm - Setting Up Kubernetes Worker Node][PlDa] |
 | 1 | [Upgrading kubeadm Clusters][PlDn] |
 | 2 | [Step 1: Kubernetes From Scratch - Downloading Release Binaries][PlDb] |
 | 3 | [Step 2: Kubernetes From Scratch - Configuring CA][PlDc]
@@ -28,7 +29,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 16 | [Understanding Network Policies - Part 01][PlDq]
 | 17 | [Understanding Network Policies - Part 02][PlDr]
 
-[PlDa]: <./kubeadm-install.md>
+[PlDa0]: <./install-kubeadm-master.md>
+[PlDa]: <./install-kubeadm-worker.md>
 [PlDb]: <./k8s-scratch-step-1-download-release-binaries.md>
 [PlDc]: <./k8s-scratch-step-2-configure-ca.md>
 [PlDd]: <./k8s-scratch-step-3-install-etcd.md>
