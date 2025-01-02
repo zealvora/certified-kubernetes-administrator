@@ -28,5 +28,5 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
    [PlDf]: <./manifest-structure.md>
    [PlDg]: <./pod-manifest-cli.md>
    [PlDh]: <./multi-container-pod.md>
-   [PlDi]: <./cmd-args.md
+   [PlDi]: <./cmd-args.md>
    [PlDj]: <./expose-pods.md>
