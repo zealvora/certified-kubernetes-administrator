@@ -5,22 +5,28 @@ kubectl run nginx --image=nginx
 
 kubectl get pods
 ```
-#### 2. Create a Pod and Expose a Port
+
+#### 2. Create a Pod from Nginx Image with Dry Run
+
 ```sh
-kubectl run nginx-port --image=nginx --port=80
-kubectl describe pod nginx-port
+kubectl run nginx2 --image=nginx --dry-run=client
+
+kubectl get pods
+```
+#### 3. Create a Pod from Nginx Image with Output of YAML
+
+```sh
+kubectl run nginx2 --image=nginx -o yaml
+```
+#### 4. Main Command of this Video to Create Manifest File
+
+```sh
+kubectl run nginx4 --image=nginx --dry-run=client -o yaml
+
+kubectl run nginx4 --image=nginx --dry-run=client -o yaml > pod-custom.yaml
 ```
 
-
-#### 3. Output the Manifest File
+#### 4. Delete All Pods
 ```sh
-kubectl run nginx --image=nginx --port=80 --dry-run=client -o yaml
-```
-
-
-#### 4. Delete PODS
-```sh
-kubectl delete pod nginx
-
 kubectl delete pod --all
 ```

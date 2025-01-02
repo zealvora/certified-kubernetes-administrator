@@ -14,15 +14,19 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 3 | [Configuring Kubernetes Using Minikube][PlDc] |
 | 4 | [Basics of Pods][PlDd] |
 | 5 | [Multiple Ways to Create Kubernetes Objects][PlDe] |
-| 6 | [Understanding Commands and Arguments in Kubernetes][PlDf] |
-| 7 | [Exposing Ports for PODS][PlDg] |
-| 8 | [Generating Pod Manifests via CLI][PlDh] |
+| 6 | [Basic Structure of a Manifest File][PlDf] |
+| 7 | [Generating Manifest File through CLI Command][PlDg] |
+| 8 | [Creating Multi-Container Pods][PlDh] |
+| 9 | [Understanding Commands and Arguments in Kubernetes][PlDi] |
+| 10 | [Exposing Ports for PODS][PlDj] |
 
    [PlDa]: <./install-kubectl.md>
    [PlDb]: <./kubectl-to-k8s.md>
    [PlDc]: <./minikube-install.md>
    [PlDd]: <./basic-pods.md>
    [PlDe]: <./pod-manifest.md>
-   [PlDf]: <./cmd-args.md>
-   [PlDg]: <./expose-pods.md>
-   [PlDh]: <./pod-manifest-cli.md>
+   [PlDf]: <./manifest-structure.md>
+   [PlDg]: <./pod-manifest-cli.md>
+   [PlDh]: <./multi-container-pod.md>
+   [PlDi]: <./cmd-args.md
+   [PlDj]: <./expose-pods.md>
