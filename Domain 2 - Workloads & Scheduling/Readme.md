@@ -29,7 +29,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDd]: <./rollback-deployment.md>
 [PlDe]: <./manifest-cli.md>
 [PlDf]: <./daemonset.yaml>
-[PlDg]: <./nodeSelector.yaml>
+[PlDg]: <./nodeSelector.md>
 [PlDh]: <./node-affinity-combined.md>
 [PlDi]: <./requests-limits.yaml>
 [PlDj]: <./pod-without-scheduler.md>
