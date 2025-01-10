@@ -10,21 +10,23 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | Sr No | Document Link |
 | ------ | ------ |
 | 1 | [Implementing Labels and Selectors][PlDa] |
-| 2 | [Creating our first ReplicaSet][PlDb] |
-| 3 | [Creating our first Deployment][PlDc]
-| 4 | [Rolling Back Deployments][PlDd]
-| 5 | [Generating Deployment Manifests via CLI][PlDe] |
-| 6 | [Understanding DaemonSets][PlDf] |
-| 7 | [Overview of NodeSelector][PlDg] |
-| 8 | [Understanding Node Affinity][PlDh] |
-| 9 | [Resource Limits][PlDi] |
-| 10 | [Scheduling Pods without a Scheduler][PlDj] |
-| 11 | [Taints and Tolerations][PlDk] |
-| 12 | [Adapter Pattern][PlDl] |
+| 2 | [ReplicaSet - Practical][PlDb] |
+| 3 | [Challenges with ReplicaSets][PlDb1] |
+| 4 | [Creating our first Deployment][PlDc]
+| 5 | [Rolling Back Deployments][PlDd]
+| 6 | [Generating Deployment Manifests via CLI][PlDe] |
+| 7 | [Understanding DaemonSets][PlDf] |
+| 8 | [Overview of NodeSelector][PlDg] |
+| 9 | [Understanding Node Affinity][PlDh] |
+| 10 | [Resource Limits][PlDi] |
+| 11 | [Scheduling Pods without a Scheduler][PlDj] |
+| 12 | [Taints and Tolerations][PlDk] |
+| 13 | [Adapter Pattern][PlDl] |
 
 
 [PlDa]: <./labels.md>
 [PlDb]: <./replicaset.md>
+[PlDb1]: <./rs-challenges.md>
 [PlDc]: <./deployment.md>
 [PlDd]: <./rollback-deployment.md>
 [PlDe]: <./manifest-cli.md>
