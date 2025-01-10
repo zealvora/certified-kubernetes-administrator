@@ -2,16 +2,15 @@
 
 https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/
 
-#### Step 1: Create a ReplicaSet
+#### Step 1: Create a ReplicaSet Manifest File (replicaset.yaml)
 
-##### replicaset.yaml 
 ```sh
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: kplabs-replicaset
+  name: frontend-replicaset
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       tier: frontend
@@ -22,8 +21,9 @@ spec:
     spec:
       containers:
       - name: php-redis
-        image: nginx
+        image: us-docker.pkg.dev/google-samples/containers/gke/gb-frontend:v5
 ```
+
 ```sh
 kubectl apply -f replicaset.yaml 
 ```
@@ -32,13 +32,13 @@ kubectl apply -f replicaset.yaml
 kubectl get replicaset
 
 kubectl get pods
-```
-
-#### Step 3: Testing ReplicSet capability
-```sh
-kubectl delete pod <1-POD-from-ReplicaSet>
 
 kubectl get pods --show-labels
+```
+#### Step 3: Scaling ReplicaSet
+```sh
+kubectl scale --replicas=5 rs/frontend-replicaset
+kubectl scale --replicas=1 rs/frontend-replicaset
 ```
 
 #### Step 4: Delete Replica Set
