@@ -1,6 +1,6 @@
 # Domain - Workloads & Scheduling
 
-The code mentioned in this document are used in the Certified Kubernetes Administrator 2023 course.
+The code mentioned in this document are used in the Certified Kubernetes Administrator 2025 course.
 
 https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=700DA06BF8A30E27AC7E
 
@@ -11,7 +11,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | ------ | ------ |
 | 1 | [Implementing Labels and Selectors][PlDa] |
 | 2 | [ReplicaSet - Practical][PlDb] |
-| 3 | [Challenges with ReplicaSets][PlDbc] |
+| 3 | [Challenges with ReplicaSets][PlDc] |
 | 4 | [Deployment - Practical][PlDd]
 | 5 | [Understanding DaemonSets][PlDe] |
 | 6 | [Overview of NodeSelector][PlDf] |
