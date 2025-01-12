@@ -11,29 +11,25 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | ------ | ------ |
 | 1 | [Implementing Labels and Selectors][PlDa] |
 | 2 | [ReplicaSet - Practical][PlDb] |
-| 3 | [Challenges with ReplicaSets][PlDb1] |
-| 4 | [Creating our first Deployment][PlDc]
-| 5 | [Rolling Back Deployments][PlDd]
-| 6 | [Generating Deployment Manifests via CLI][PlDe] |
-| 7 | [Understanding DaemonSets][PlDf] |
-| 8 | [Overview of NodeSelector][PlDg] |
-| 9 | [Understanding Node Affinity][PlDh] |
-| 10 | [Resource Limits][PlDi] |
-| 11 | [Scheduling Pods without a Scheduler][PlDj] |
-| 12 | [Taints and Tolerations][PlDk] |
-| 13 | [Adapter Pattern][PlDl] |
+| 3 | [Challenges with ReplicaSets][PlDbc] |
+| 4 | [Creating our first Deployment][PlDd]
+| 5 | [Understanding DaemonSets][PlDe] |
+| 6 | [Overview of NodeSelector][PlDf] |
+| 7 | [Understanding Node Affinity][PlDg] |
+| 8 | [Resource Limits][PlDh] |
+| 9 | [Scheduling Pods without a Scheduler][PlDi] |
+| 10 | [Taints and Tolerations][PlDj] |
+| 11 | [Adapter Pattern][PlDk] |
 
 
 [PlDa]: <./labels.md>
 [PlDb]: <./replicaset.md>
-[PlDb1]: <./rs-challenges.md>
-[PlDc]: <./deployment.md>
-[PlDd]: <./rollback-deployment.md>
-[PlDe]: <./manifest-cli.md>
-[PlDf]: <./daemonset.yaml>
-[PlDg]: <./nodeSelector.md>
-[PlDh]: <./node-affinity-combined.md>
-[PlDi]: <./requests-limits.yaml>
-[PlDj]: <./pod-without-scheduler.md>
-[PlDk]: <./taints-tolerations.md>
-[PlDl]: <./adapter.yaml>
+[PlDc]: <./rs-challenges.md>
+[PlDd]: <./deployment.md>
+[PlDe]: <./daemonset.yaml>
+[PlDf]: <./nodeSelector.md>
+[PlDg]: <./node-affinity-combined.md>
+[PlDh]: <./requests-limits.yaml>
+[PlDi]: <./pod-without-scheduler.md>
+[PlDj]: <./taints-tolerations.md>
+[PlDk]: <./adapter.yaml>
