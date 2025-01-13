@@ -13,8 +13,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 2 | [ReplicaSet - Practical][PlDb] |
 | 3 | [Challenges with ReplicaSets][PlDc] |
 | 4 | [Deployment - Practical][PlDd]
-| 5 | [Understanding DaemonSets][PlDe] |
-| 6 | [Overview of NodeSelector][PlDf] |
+| 5 | [Practical - DaemonSet][PlDe] |
+| 6 | [Practical - NodeSelector][PlDf] |
 | 7 | [Understanding Node Affinity][PlDg] |
 | 8 | [Resource Limits][PlDh] |
 | 9 | [Scheduling Pods without a Scheduler][PlDi] |
@@ -26,7 +26,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDb]: <./replicaset.md>
 [PlDc]: <./rs-challenges.md>
 [PlDd]: <./deployment.md>
-[PlDe]: <./daemonset.yaml>
+[PlDe]: <./daemonset.md>
 [PlDf]: <./nodeSelector.md>
 [PlDg]: <./node-affinity-combined.md>
 [PlDh]: <./requests-limits.yaml>
