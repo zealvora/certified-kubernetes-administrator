@@ -28,8 +28,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDd]: <./deployment.md>
 [PlDe]: <./daemonset.md>
 [PlDf]: <./nodeSelector.md>
-[PlDg]: <./node-affinity-combined.md>
-[PlDh]: <./requests-limits.yaml>
+[PlDg]: <./node-affinity.md>
+[PlDh]: <./requests-limits.md>
 [PlDi]: <./pod-without-scheduler.md>
 [PlDj]: <./taints-tolerations.md>
 [PlDk]: <./adapter.yaml>
