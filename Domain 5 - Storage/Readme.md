@@ -22,4 +22,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
    [PlDc]: <./dynamic-pvc.md>
    [PlDd]: <./configmap-01.md>
    [PlDe]: <./configmap-02.md>
-   [PlDf]: <./pod-securitycontext.yaml>
+   [PlDf]: <./security-context.md>
