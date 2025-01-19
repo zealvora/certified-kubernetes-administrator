@@ -12,8 +12,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 1 | [Practical - Service and Endpoints][PlDa] |
 | 2 | [Using Selectors in Service][PlDb] |
 | 3 | [Service Type: ClusterIP][PlDc] |
-| 4 | [Practical - NodePort Service][PlDd] |
-| 5 | [Practical - Load Balancer Service][PlDe]
+| 4 | [Practical - NodePort][PlDd] |
+| 5 | [Practical - LoadBalancer][PlDe]
 | 6 | [Installing Helm][PlDf] |
 | 7 | [Deploying our first Helm Chart][PlDg] |
 | 8 | [Creating Ingress Resource][PlDh] |
