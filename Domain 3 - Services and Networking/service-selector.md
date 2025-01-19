@@ -1,85 +1,56 @@
+#### Base Service Manifest File Used:
 
-#### Step 1: Creating Deployments
-```sh
-nano demo-deployment.yaml
-```
-```sh
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: nginx-deployment
-  labels:
-    app: nginx
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      containers:
-      - name: nginx
-        image: nginx:1.14.2
-        ports:
-        - containerPort: 80
-```
-```sh
-kubectl apply -f demo-deployment.yaml
-```
+service.yaml 
 
-#### Step 2: Creating Service
-```sh
-nano service-selector.yaml
-```
 ```sh
 apiVersion: v1
 kind: Service
 metadata:
-   name: kplabs-service-selector
+   name: simple-service
+spec:
+   ports:
+   - port: 80
+     targetPort: 80
+```
+
+
+#### Adding Selector in Service Manifest
+```sh
+apiVersion: v1
+kind: Service
+metadata:
+   name: simple-service
 spec:
    selector:
-     app: nginx
+     app: backend
    ports:
    - port: 80
      targetPort: 80
 ```
 ```sh
-kubectl apply -f service-selector.yaml
+kubectl create -f service.yaml
+```
+#### Create Pods with Appropriate Labels
+```sh
+kubectl run backend-pod-1 --image=nginx
+kubectl run backend-pod-2 --image=nginx
+
+kubectl label pod backend-pod-1 app=backend
+kubectl label pod backend-pod-2 app=backend
+```
+#### Verification
+```sh
+kubectl describe service simple-service
+
+kubectl label pod backend-pod-1 app-
+
+kubectl describe service simple-service
 ```
 
-#### Step 3: Verify Endpoints in Service
+#### Delete Created Resources
 ```sh
-kubectl describe service kplabs-service-selector
-```
+kubectl delete -f service.yaml
 
-#### Step 4: Scale Deployments
-```sh
-kubectl scale deployment/nginx-deployment --replicas=10
-```
-
-#### Step 5: Verify Endpoints in Service
-```sh
-kubectl describe service kplabs-service-selector
-```
-
-#### Step 6: Create a New Manual POD and Add a Label
-```sh
-kubectl run manual-pod --image=nginx
-kubectl label pods manual-pod app=nginx
-```
-
-#### Step 7: Verify Endpoints in Service
-```sh
-kubectl describe service kplabs-service-selector
-kubectl describe endpoints kplabs-service-selector
-```
-
-#### Step 8: Delete Created Resources
-```sh
-kubectl delete service kplabs-service-selector
-kubectl delete -f demo-deployment.yaml
-kubectl delete pod manual-pod
+kubectl delete pod backend-pod-1
+kubectl delete pod backend-pod-2
 ```

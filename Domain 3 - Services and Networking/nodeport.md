@@ -1,42 +1,81 @@
+### Base Service Manifest File Used
 
-#### Step 1: Create Sample POD with Label
-```sh
-kubectl run nodeport-pod --labels="type=publicpod" --image=nginx
-kubectl get pods --show-labels
-```
-#### Step 2: Create NodePort service
-```sh
-nano nodeport.yaml
-```
+service.yaml 
+
 ```sh
 apiVersion: v1
 kind: Service
 metadata:
-   name: kplabs-nodeport
+   name: nodeport-service
 spec:
    selector:
-     type: publicpod
+     app: backend
+   ports:
+   - port: 80
+     targetPort: 80
+```
+
+### Creating NodePort Service Type
+
+```sh
+apiVersion: v1
+kind: Service
+metadata:
+   name: nodeport-service
+spec:
+   selector:
+     app: backend
    type: NodePort
    ports:
    - port: 80
      targetPort: 80
 ```
 ```sh
-kubectl apply -f nodeport.yaml
+kubectl create -f service.yaml
 ```
-#### Step 3: Verify NodePort
+### Create Necessary Pods to Match Service Selector
 ```sh
-kubectl get service
+kubectl run backend-pod --image=nginx
+
+kubectl label pod backend-pod app=backend
+
+kubectl describe service nodeport-service
 ```
-#### Step 4: Fetch the Worker Node Public IP
+### Fetch the Worker Node IP to make a request
 ```sh
 kubectl get nodes -o wide
+
+curl <IP:NodePort>
+```
+### Create NodePort Manifest from CLI
+```sh
+kubectl create service nodeport --help
+
+kubectl create service nodeport test-nodeport --tcp=80:80 --dry-run=client -o ya```ml
 ```
 
-Copy the Public IP of Worker Node and Paste it in browser along with NodePort
+### Manually Define NodePort in Manifest
 
-#### Step 5: Delete the Resources
 ```sh
-kubectl delete pod nodeport-pod
-kubectl delete -f nodeport.yaml
+apiVersion: v1
+kind: Service
+metadata:
+   name: nodeport-service
+spec:
+   type: NodePort
+   ports:
+   - port: 80
+     targetPort: 80
+     nodePort: 30556
+```
+```sh
+kubectl delete service nodeport-service
+
+kubectl create -f service.yaml
+```
+
+#### Step 5: Delete All the Resources
+```sh
+kubectl delete pod backend-pod
+kubectl delete -f service.yaml
 ```

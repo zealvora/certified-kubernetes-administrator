@@ -9,11 +9,11 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 1 | [Creating Service and Endpoints][PlDa] |
+| 1 | [Practical - Service and Endpoints][PlDa] |
 | 2 | [Using Selectors in Service][PlDb] |
-| 3 | [Service Type: NodePort][PlDc] |
-| 4 | [Service Type: Load Balancer][PlDd]
-| 5 | [Generating Service Manifest via CLI][PlDe]
+| 3 | [Service Type: ClusterIP][PlDc] |
+| 4 | [Practical - NodePort Service][PlDd] |
+| 5 | [Practical - Load Balancer Service][PlDe]
 | 6 | [Installing Helm][PlDf] |
 | 7 | [Deploying our first Helm Chart][PlDg] |
 | 8 | [Creating Ingress Resource][PlDh] |
@@ -26,11 +26,11 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 
 
-[PlDa]: <./serviceandendpoints.md>
+[PlDa]: <./service-endpoints.md>
 [PlDb]: <./service-selector.md>
-[PlDc]: <./nodeport.md>
-[PlDd]: <./loadbalancer.md>
-[PlDe]: <./service-manifest-cli.md>
+[PlDc]: <./cluster-ip.md>
+[PlDd]: <./nodeport.md>
+[PlDe]: <./loadbalancer.md>
 [PlDf]: <./install-helm.md>      
 [PlDg]: <./first-helm-chart.md>
 [PlDh]: <./ingress.md>
