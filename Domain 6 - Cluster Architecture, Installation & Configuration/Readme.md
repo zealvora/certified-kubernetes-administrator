@@ -28,6 +28,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 15 | [ETCD Backup and Restore][PlDp]
 | 16 | [Understanding Network Policies - Part 01][PlDq]
 | 17 | [Understanding Network Policies - Part 02][PlDr]
+| 18 | [Taints and Tolerations][PlDs]
 
 [PlDa0]: <./install-kubeadm-master.md>
 [PlDa]: <./install-kubeadm-worker.md>
@@ -48,3 +49,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDp]: <./etcd-backup-restore.md>
 [PlDq]: <./netpol-01.md>
 [PlDr]: <./netpol02.md>
+[PlDs]: <./taint-toleration.md>

@@ -14,15 +14,16 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 3 | [Service Type: ClusterIP][PlDc] |
 | 4 | [Practical - NodePort][PlDd] |
 | 5 | [Practical - LoadBalancer][PlDe]
-| 8 | [Practical - Ingress Resource][PlDf] |
-| 8 | [Practical - Ingress Controller][PlDg] |
-| 6 | [Installing Helm][PlDh] |
-| 7 | [Deploying our first Helm Chart][PlDi] |
-| 10 | [Kubernetes Namespace][PlDj] |
-| 11 | [Overview of Service Accounts][PlDk] |
-| 12 | [Service Accounts - Points to Note][PlDl] |
-| 13 | [Service Accounts- Practical Scenerios][PlDm] |
-| 14 | [Named Port][PlDn] |
+| 6 | [Practical - Ingress Resource][PlDf] |
+| 7 | [Ingress Rules - Routing Patterns][PlDg] |
+| 8 | [Practical - Ingress Controller][PlDh] |
+| 9 | [Installing Helm][PlDi] |
+| 10 | [Deploying our first Helm Chart][PlDj] |
+| 11 | [Kubernetes Namespace][PlDk] |
+| 12 | [Overview of Service Accounts][PlDl] |
+| 13 | [Service Accounts - Points to Note][PlDm] |
+| 14 | [Service Accounts- Practical Scenerios][PlDn] |
+| 15 | [Named Port][PlDo] |
 
 
 
@@ -32,11 +33,12 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDd]: <./nodeport.md>
 [PlDe]: <./loadbalancer.md>
 [PlDf]: <./ingress.md>
-[PlDg]: <./ingress-controller.md>
-[PlDh]: <./install-helm.md>      
-[PlDi]: <./first-helm-chart.md>
-[PlDj]: <./namespace.md>
-[PlDk]: <./service-account.md>
-[PlDl]: <./sa-pointers.md>
-[PlDm]: <./sa-practical.md>
-[PlDn]: <./named-port.md>
+[PlDg]: <./ingress-routing-pattern.md>
+[PlDh]: <./ingress-controller.md>
+[PlDi]: <./install-helm.md>      
+[PlDj]: <./first-helm-chart.md>
+[PlDk]: <./namespace.md>
+[PlDl]: <./service-account.md>
+[PlDm]: <./sa-pointers.md>
+[PlDn]: <./sa-practical.md>
+[PlDo]: <./named-port.md>
