@@ -26,9 +26,10 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 13 | [Step 12: Kubernetes From Scratch - Kubelet Preferred Instance Type ][PlDm]
 | 14 | [Breakdown Learning][PlDo]
 | 15 | [ETCD Backup and Restore][PlDp]
-| 16 | [Understanding Network Policies - Part 01][PlDq]
-| 17 | [Understanding Network Policies - Part 02][PlDr]
-| 18 | [Taints and Tolerations][PlDs]
+| 16 | [Structure of Network Policy][PlDq]
+| 17 | [Practical - Network Policies][PlDr]
+| 18 | [Network Policies - Except,Port and Protocol][PlDr2]
+| 19 | [Taints and Tolerations][PlDs]
 
 [PlDa0]: <./install-kubeadm-master.md>
 [PlDa]: <./install-kubeadm-worker.md>
@@ -47,6 +48,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDn]: <./kubeadm-upgrade.md>
 [PlDo]: <./breakdown-learning.md>
 [PlDp]: <./etcd-backup-restore.md>
-[PlDq]: <./netpol-01.md>
-[PlDr]: <./netpol02.md>
+[PlDq]: <./netpol-structure.md>
+[PlDr]: <./netpol-practical.md>
+[PlDr2]: <./netpol-02.md>
 [PlDs]: <./taint-toleration.md>
