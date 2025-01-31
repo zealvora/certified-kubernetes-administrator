@@ -1,9 +1,11 @@
 #### Step 1. Generate Certificate for Administrator User
 ```sh
 cd /root/certificates
+{
 openssl genrsa -out admin.key 2048
 openssl req -new -key admin.key -subj "/CN=admin/O=system:masters" -out admin.csr
 openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out admin.crt -days 1000
+}
 ```
 
 #### Step 2. Create KubeConfig file:
@@ -36,12 +38,15 @@ Note: Replace the IP address from the below snippet in line 5 with your IP addre
 #### Step 3: Verify Cluster Status
 ```sh
 kubectl get componentstatuses --kubeconfig=admin.kubeconfig
+
 cp /root/certificates/admin.kubeconfig ~/.kube/config
+
 kubectl get componentstatuses
 ```
 #### Step 4: Verify Kubernetes Objects Creation
 ```sh
 kubectl create namespace kplabs
+
 kubectl get namespace kplabs -o yaml
 
 kubectl create secret generic prod-secret --from-literal=username=admin --from-literal=password=password123

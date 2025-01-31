@@ -1,37 +1,29 @@
 #### Pre-Requisite 1: Configure Container Runtime. (WORKER NODE)
-
-```sh
-cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
+{
+ cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
 overlay
 br_netfilter
 EOF
-```
-```sh
 modprobe overlay
 modprobe br_netfilter
-```
-```sh
-cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+ cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
 net.bridge.bridge-nf-call-iptables  = 1
 net.ipv4.ip_forward                 = 1
 net.bridge.bridge-nf-call-ip6tables = 1
 EOF
-```
-```sh
 sysctl --system
-```
+}
+
 ```sh
 apt-get install -y containerd
 mkdir -p /etc/containerd
 containerd config default > /etc/containerd/config.toml
-```
-```sh
-nano /etc/containerd/config.toml
-```
-  --> SystemdCgroup = true
 
-```sh
+sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+
 systemctl restart containerd
+
+systemctl status containerd
 ```
 
 ```sh
@@ -61,7 +53,7 @@ Note:
 cd /root/certificates
 ```
 ```sh
-cat > openssl-kplabs-cka-worker.cnf <<EOF
+cat > openssl-worker.cnf <<EOF
 [req]
 req_extensions = v3_req
 distinguished_name = req_distinguished_name
@@ -71,23 +63,28 @@ basicConstraints = CA:FALSE
 keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 subjectAltName = @alt_names
 [alt_names]
-DNS.1 = kplabs-cka-worker
-IP.1 = 128.199.30.177
+DNS.1 = worker
+IP.1 = 64.227.162.102
 EOF
 ```
 ```sh
-openssl genrsa -out kplabs-cka-worker.key 2048
-```
-```sh
-openssl req -new -key kplabs-cka-worker.key -subj "/CN=system:node:kplabs-cka-worker/O=system:nodes" -out kplabs-cka-worker.csr -config openssl-kplabs-cka-worker.cnf
-openssl x509 -req -in kplabs-cka-worker.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kplabs-cka-worker.crt -extensions v3_req -extfile openssl-kplabs-cka-worker.cnf -days 1000
-```
+{
+openssl genrsa -out worker.key 2048
 
+openssl req -new -key worker.key -subj "/CN=system:node:worker/O=system:nodes" -out worker.csr -config openssl-worker.cnf
+
+openssl x509 -req -in worker.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out worker.crt -extensions v3_req -extfile openssl-worker.cnf -days 1000
+}
+```
 #### Step 2: Generate kube-proxy certificate: (MASTER NODE)
 ```sh
+{
 openssl genrsa -out kube-proxy.key 2048
+
 openssl req -new -key kube-proxy.key -subj "/CN=system:kube-proxy" -out kube-proxy.csr
+
 openssl x509 -req -in kube-proxy.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kube-proxy.crt -days 1000
+}
 ```
 #### Step 3: Copy Certificates to Worker Node:
 
@@ -97,27 +94,27 @@ Certificates: kubelet, kube-proxy and CA certificate.
 In-case you want to automate it, then following configuration can be used.
 In the demo, we had made used of manual way.
 
-In-case, you want to transfer file from master to worker node, then you can make use of the following approach:
+In-case, you want to transfer file from control-plane node to worker node, then you can make use of the following approach:
 
 ##### - Worker Node:
 ```sh
-nano /etc/ssh/sshd_config
-PasswordAuthentication yes
-systemctl restart sshd
+grep -r PasswordAuthentication /etc/ssh -l | xargs -n 1 sed -i 's/#\s*PasswordAuthentication\s.*$/PasswordAuthentication yes/; s/^PasswordAuthentication\s*no$/PasswordAuthentication yes/'
+
+systemctl restart ssh
 useradd zeal
 passwd zeal
 zeal5872#
 ```
 ##### - Master Node:
 ```sh
-scp kube-proxy.crt kube-proxy.key kplabs-cka-worker.crt kplabs-cka-worker.key ca.crt zeal@161.35.205.5:/tmp
+scp kube-proxy.crt kube-proxy.key worker.crt worker.key ca.crt zeal@64.227.162.102:/tmp
 
 ```
 ##### - Worker Node:
 ```sh
 mkdir /root/certificates
 cd /tmp
-mv kube-proxy.crt kube-proxy.key kplabs-cka-worker.crt kplabs-cka-worker.key ca.crt /root/certificates
+mv kube-proxy.crt kube-proxy.key worker.crt worker.key ca.crt /root/certificates
 
 
 ```
@@ -127,7 +124,7 @@ mkdir /var/lib/kubernetes
 cd /root/certificates
 cp ca.crt /var/lib/kubernetes
 mkdir /var/lib/kubelet
-mv kplabs-cka-worker.crt  kplabs-cka-worker.key  kube-proxy.crt  kube-proxy.key /var/lib/kubelet/
+mv worker.crt  worker.key  kube-proxy.crt  kube-proxy.key /var/lib/kubelet/
 ```
 #### Step 5: Generate Kubelet Configuration YAML File: (WORKER NODE)
 ```sh
@@ -186,24 +183,24 @@ SERVER_IP=IP-OF-API-SERVER
     --certificate-authority=ca.crt \
     --embed-certs=true \
     --server=https://${SERVER_IP}:6443 \
-    --kubeconfig=kplabs-cka-worker.kubeconfig
+    --kubeconfig=worker.kubeconfig
 
-  kubectl config set-credentials system:node:kplabs-cka-worker \
-    --client-certificate=kplabs-cka-worker.crt \
-    --client-key=kplabs-cka-worker.key \
+  kubectl config set-credentials system:node:worker \
+    --client-certificate=worker.crt \
+    --client-key=worker.key \
     --embed-certs=true \
-    --kubeconfig=kplabs-cka-worker.kubeconfig
+    --kubeconfig=worker.kubeconfig
 
   kubectl config set-context default \
     --cluster=kubernetes-from-scratch \
-    --user=system:node:kplabs-cka-worker \
-    --kubeconfig=kplabs-cka-worker.kubeconfig
+    --user=system:node:worker \
+    --kubeconfig=worker.kubeconfig
 
-  kubectl config use-context default --kubeconfig=kplabs-cka-worker.kubeconfig
+  kubectl config use-context default --kubeconfig=worker.kubeconfig
 }
 ```
 ```sh
-mv kplabs-cka-worker.kubeconfig kubeconfig
+mv worker.kubeconfig kubeconfig
 ```
 ### Part 2 - Kube-Proxy
 

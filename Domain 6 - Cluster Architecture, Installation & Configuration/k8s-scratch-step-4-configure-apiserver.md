@@ -11,7 +11,7 @@ cd /root/binaries/kubernetes/server/bin/
 cp kube-apiserver /usr/local/bin/
 ```
 
-Ensure that the SERVER_IP variable is still set.
+Ensure that the `SERVER_IP` variable is still set.
 
 #### Step 1. Generate Configuration File for CSR Creation.
 ```sh
@@ -39,21 +39,31 @@ EOF
 ```
 #### Step 2: Generate Certificates for API Server
 ```sh
+{
 openssl genrsa -out kube-api.key 2048
+
 openssl req -new -key kube-api.key -subj "/CN=kube-apiserver" -out kube-api.csr -config api.conf
-openssl x509 -req -in kube-api.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kube-api.crt -extensions v3_req -extfile api.conf -days 1000
+
+openssl x509 -req -in kube-api.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out kube-api.crt -extensions v3_req -extfile api.conf -days 1000
+}
 ```
 #### Step 3: Generate Certificate for Service Account:
 ```sh
+{
 openssl genrsa -out service-account.key 2048
+
 openssl req -new -key service-account.key -subj "/CN=service-accounts" -out service-account.csr
-openssl x509 -req -in service-account.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out service-account.crt -days 100
+
+openssl x509 -req -in service-account.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out service-account.crt -days 100
+}
 ```
 
 #### Step 4: Copy the certificate files to /var/lib/kubernetes directory
 ```sh
 mkdir /var/lib/kubernetes
+
 cp etcd.crt etcd.key ca.crt kube-api.key kube-api.crt service-account.crt service-account.key /var/lib/kubernetes
+
 ls /var/lib/kubernetes
 ```
 

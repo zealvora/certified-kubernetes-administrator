@@ -1,4 +1,4 @@
-### Run in Master Node
+### Run This in Control Plane Node
 
 ```sh
 cat <<EOF | kubectl apply -f -

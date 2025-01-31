@@ -30,9 +30,11 @@ IP.2 = 127.0.0.1
 EOF
 ```
 ```sh
+{
 openssl req -new -key etcd.key -subj "/CN=etcd" -out etcd.csr -config etcd.cnf
 
 openssl x509 -req -in etcd.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out etcd.crt -extensions v3_req -extfile etcd.cnf -days 1000
+}
 ```
 #### Step 2: Copy the Certificates and Key to /etc/etcd
 ```sh
@@ -41,7 +43,7 @@ cp etcd.crt etcd.key ca.crt /etc/etcd
 ```
 #### Step 3: Copy the ETCD and ETCDCTL Binaries to the Path
 ```sh
-cd /root/binaries/kubernetes/server/bin/etcd-v3.5.4-linux-amd64/
+cd /root/binaries/etcd-v3.5.18-linux-amd64/
 cp etcd etcdctl /usr/local/bin/
 ```
 
@@ -88,7 +90,6 @@ systemctl enable etcd
 ```
 #### Verification Commands:
 
-When we try with etcdctl --endpoints=https://127.0.0.1:2379 get foo, it gives unknown certificate authority.
 ```sh
 ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/etcd/ca.crt --cert=/etc/etcd/etcd.crt --key=/etc/etcd/etcd.key put course "kplabs cka course is awesome"
 ```

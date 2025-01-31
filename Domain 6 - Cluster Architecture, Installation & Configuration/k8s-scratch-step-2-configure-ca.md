@@ -1,27 +1,27 @@
-##### 0. Create base directory were all the certificates and keys will be stored
+#### 1. Create base directory for Certificate Storage
 
 ```sh
 mkdir /root/certificates
 cd /root/certificates
 ```
 
-##### 1. Creating a private key for Certificate Authority
+#### 12. Creating a private key for Certificate Authority
 ```sh
 openssl genrsa -out ca.key 2048
 ```
-##### 2. Creating CSR
+#### 3. Creating CSR
 ```sh
-openssl req -new -key ca.key -subj "/CN=KUBERNETES-CA" -out ca.csr
+openssl req -new -key ca.key -subj -CA -CAcreateserial "/CN=KUBERNETES-CA" -out ca.csr
 ```
-##### 3. Self-Sign the CSR
+#### 4. Self-Sign the CSR
 ```sh
-openssl x509 -req -in ca.csr -signkey ca.key -CAcreateserial  -out ca.crt -days 1000
+openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt -days 1000
 ```
-##### 4. See Contents of Certificate
+#### 5. See Contents of Certificate
 ```sh
 openssl x509 -in ca.crt -text -noout
 ```
-##### 5. Remove CSR
+#### 6. Remove CSR
 ```sh
 rm -f ca.csr
 ```

@@ -4,22 +4,26 @@
 cd /root/certificates
 ```
 ```sh
+{
 openssl genrsa -out kube-controller-manager.key 2048
+
 openssl req -new -key kube-controller-manager.key -subj "/CN=system:kube-controller-manager" -out kube-controller-manager.csr
+
 openssl x509 -req -in kube-controller-manager.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out kube-controller-manager.crt -days 1000
+}
 ```
 #### 2. Generating KubeConfig
 ```sh
 cp /root/binaries/kubernetes/server/bin/kubectl /usr/local/bin
 ```
 ```sh
+{
 kubectl config set-cluster kubernetes-from-scratch \
     --certificate-authority=ca.crt \
     --embed-certs=true \
     --server=https://127.0.0.1:6443 \
     --kubeconfig=kube-controller-manager.kubeconfig
-```
-```sh
+
 kubectl config set-cluster kubernetes-from-scratch \
     --certificate-authority=ca.crt \
     --embed-certs=true \
@@ -36,9 +40,9 @@ kubectl config set-context default \
     --cluster=kubernetes-from-scratch \
     --user=system:kube-controller-manager \
     --kubeconfig=kube-controller-manager.kubeconfig
-```
-```sh
+
 kubectl config use-context default --kubeconfig=kube-controller-manager.kubeconfig
+}
 ```
 #### Step 3: Copying the files to kubernetes directory
 ```sh
