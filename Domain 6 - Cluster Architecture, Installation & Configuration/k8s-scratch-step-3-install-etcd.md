@@ -12,7 +12,6 @@ echo $SERVER_IP
 cd /root/certificates/
 openssl genrsa -out etcd.key 2048
 ```
-#### Note: Replace the value associated with IP.1 in the below step.
 
 ```sh
 cat > etcd.cnf <<EOF

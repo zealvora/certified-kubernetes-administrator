@@ -81,7 +81,10 @@ EOF
 #### Start Controller Manager:
 ```sh
 cp /root/binaries/kubernetes/server/bin/kube-controller-manager /usr/local/bin
+
 systemctl start kube-controller-manager
+
 systemctl status kube-controller-manager
+
 systemctl enable kube-controller-manager
 ```

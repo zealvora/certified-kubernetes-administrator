@@ -61,7 +61,10 @@ EOF
 #### Step 5: Verification:
 ```sh
 cp /root/binaries/kubernetes/server/bin/kube-scheduler /usr/local/bin
+
 systemctl start kube-scheduler
+
 systemctl status kube-scheduler
+
 systemctl enable kube-scheduler
 ```

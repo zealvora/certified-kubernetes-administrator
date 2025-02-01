@@ -1,7 +1,7 @@
 
   ### Note:
   Step 1 to 3 will be on Worker node
-  Step 4 will be on Master node.
+  Step 4 will be on Control Plane node.
 
   #### Step 1: Download CNI Plugins:
   ```sh

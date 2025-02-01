@@ -1,22 +1,26 @@
 #### Pre-Requisite 1: Configure Container Runtime. (WORKER NODE)
+```sh
 {
- cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
+cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
 overlay
 br_netfilter
 EOF
 modprobe overlay
 modprobe br_netfilter
- cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+
+cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
 net.bridge.bridge-nf-call-iptables  = 1
 net.ipv4.ip_forward                 = 1
 net.bridge.bridge-nf-call-ip6tables = 1
 EOF
 sysctl --system
 }
-
+```
 ```sh
 apt-get install -y containerd
+
 mkdir -p /etc/containerd
+
 containerd config default > /etc/containerd/config.toml
 
 sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
@@ -38,13 +42,15 @@ sudo sysctl --system
 
 #### Pre-Requisites - 2: (WORKER NODE)
 ```sh
-
 apt install -y socat conntrack ipset
+
 sysctl -w net.ipv4.conf.all.forwarding=1
+
 cd  /root/binaries/kubernetes/node/bin/
+
 cp kube-proxy kubectl kubelet /usr/local/bin
 ```
-#### Step 1: Generate Kubelet Certificate for Worker Node. (MASTER NODE)
+#### Step 1: Generate Kubelet Certificate for Worker Node. (Control Plane Node)
 
 Note:
    1. Replace the IP Address and Hostname field in the below configurations according to your enviornement.
@@ -76,7 +82,7 @@ openssl req -new -key worker.key -subj "/CN=system:node:worker/O=system:nodes" -
 openssl x509 -req -in worker.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out worker.crt -extensions v3_req -extfile openssl-worker.cnf -days 1000
 }
 ```
-#### Step 2: Generate kube-proxy certificate: (MASTER NODE)
+#### Step 2: Generate kube-proxy certificate: (Control Plane Node)
 ```sh
 {
 openssl genrsa -out kube-proxy.key 2048
@@ -86,17 +92,11 @@ openssl req -new -key kube-proxy.key -subj "/CN=system:kube-proxy" -out kube-pro
 openssl x509 -req -in kube-proxy.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out kube-proxy.crt -days 1000
 }
 ```
-#### Step 3: Copy Certificates to Worker Node:
+#### Step 3: Copy Certificates to Worker Node (Control Plane Node)
 
 This can either be manual approach or via SCP.
-Certificates: kubelet, kube-proxy and CA certificate.
 
-In-case you want to automate it, then following configuration can be used.
-In the demo, we had made used of manual way.
-
-In-case, you want to transfer file from control-plane node to worker node, then you can make use of the following approach:
-
-##### - Worker Node:
+##### - Worker Node (Automated Approach):
 ```sh
 grep -r PasswordAuthentication /etc/ssh -l | xargs -n 1 sed -i 's/#\s*PasswordAuthentication\s.*$/PasswordAuthentication yes/; s/^PasswordAuthentication\s*no$/PasswordAuthentication yes/'
 
@@ -105,25 +105,28 @@ useradd zeal
 passwd zeal
 zeal5872#
 ```
-##### - Master Node:
+##### - Control Plane Node:
 ```sh
 scp kube-proxy.crt kube-proxy.key worker.crt worker.key ca.crt zeal@64.227.162.102:/tmp
-
 ```
 ##### - Worker Node:
 ```sh
 mkdir /root/certificates
+
 cd /tmp
+
 mv kube-proxy.crt kube-proxy.key worker.crt worker.key ca.crt /root/certificates
-
-
 ```
 #### Step 4: Move Certificates to Specific Location. (WORKER NODE)
 ```sh
 mkdir /var/lib/kubernetes
+
 cd /root/certificates
+
 cp ca.crt /var/lib/kubernetes
+
 mkdir /var/lib/kubelet
+
 mv worker.crt  worker.key  kube-proxy.crt  kube-proxy.key /var/lib/kubelet/
 ```
 #### Step 5: Generate Kubelet Configuration YAML File: (WORKER NODE)
@@ -174,7 +177,9 @@ EOF
 
 ```sh
 cd /var/lib/kubelet
+
 cp /var/lib/kubernetes/ca.crt .
+
 SERVER_IP=IP-OF-API-SERVER
 ```
 ```sh
@@ -207,7 +212,6 @@ mv worker.kubeconfig kubeconfig
 #### Step 1: Copy Kube Proxy Certificate to Directory:  (WORKER NODE)
 ```sh
 mkdir /var/lib/kube-proxy
-
 ```
 #### Step 2: Generate KubeConfig file:
 ```sh
@@ -275,7 +279,7 @@ systemctl enable kubelet
 systemctl enable kube-proxy
 ```
 
-#### Step 6: (MASTER NODE)
+#### Step 6: (Control Plane Node)
 ```sh
 kubectl get nodes
 ```

@@ -11,7 +11,7 @@ cd /root/binaries/kubernetes/server/bin/
 cp kube-apiserver /usr/local/bin/
 ```
 
-Ensure that the `SERVER_IP` variable is still set.
+Ensure that the `SERVER_IP` variable is still set using `echo $SERVER_IP`
 
 #### Step 1. Generate Configuration File for CSR Creation.
 ```sh
