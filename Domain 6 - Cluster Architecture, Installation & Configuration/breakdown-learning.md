@@ -26,41 +26,49 @@ kubectl get pods
 #### Bring Down kube-scheduler (Worker Node)
 ```sh
 systemctl stop kubelet
+
 systemctl status kubelet
 ```
 #### Testing
 ```sh
 kubectl run kubelet --image=nginx
+
 kubectl get pods
+
 kubectl describe pod kubelet
 ```
 #### Bring Up kubelet
 ```sh
 systemctl start kubelet (worker node)
-kubectl get pods  (matser node)
+
+kubectl get pods  (control-plane node)
 ```
 ## 3. Controller Manager
 
 #### Initial Setup
 ```sh
 kubectl create namespace namespace-1
+
 kubectl get sa -n namespace-1
 ```
 #### Bring Down kube-controller-manager (Master Node)
 ```sh
 systemctl stop kube-controller-manager
+
 systemctl status kube-controller-manager
 ```
 #### Testing
 ```sh
 kubectl create namespace namespace-2
+
 kubectl get sa -n namespace-2
 
-kubectl delete namespace namespace-1
 ```
 #### Bring Up kube-controller-manager and Verify
 ```sh
-systemctl start kube-controller-manager (worker node)
+systemctl start kube-controller-manager
+
 kubectl get namespace
+
 kubectl get sa -n namespace-2
 ```

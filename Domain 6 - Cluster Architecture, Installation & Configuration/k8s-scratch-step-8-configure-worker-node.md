@@ -127,7 +127,7 @@ cp ca.crt /var/lib/kubernetes
 
 mkdir /var/lib/kubelet
 
-mv worker.crt  worker.key  kube-proxy.crt  kube-proxy.key /var/lib/kubelet/
+mv worker.crt  worker.key kube-proxy.crt kube-proxy.key /var/lib/kubelet/
 ```
 #### Step 5: Generate Kubelet Configuration YAML File: (WORKER NODE)
 ```sh
@@ -180,7 +180,7 @@ cd /var/lib/kubelet
 
 cp /var/lib/kubernetes/ca.crt .
 
-SERVER_IP=IP-OF-API-SERVER
+SERVER_IP=<IP-OF-API-SERVER>
 ```
 ```sh
 {
@@ -275,6 +275,10 @@ EOF
 ```sh
 systemctl start kubelet
 systemctl start kube-proxy
+
+systemctl status kubelet
+systemctl status kube-proxy
+
 systemctl enable kubelet
 systemctl enable kube-proxy
 ```

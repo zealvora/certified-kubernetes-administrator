@@ -31,6 +31,7 @@ kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1
 ```
 
 #### Note
+The above step can take 3-5 minutes to complete.
 
 In-case if the worker node continues to be in NotReady status even after few minutes, you can restart the kubelet in the worker node
 ```sh
@@ -40,18 +41,15 @@ systemctl restart kubelet
 ##### Master Node
 ```sh
 kubectl get nodes
+
 kubectl run nginx --image=nginx
+
+kubectl get pods
 ```
 #### Note
 
 In-case if you have restarted kubelet and you run the kubectl run nginx to create a POD from master node, it can happen that Status will show Error message. In such-case, just wait for 2-3 minutes and the error would automatically go away and will change to Running.
 
-##### Worker Node
-```sh
-apt install net-tools
-ifconfig
-route -n
-```
 
 #### Step 6: Testing POD Exec (Master Node)
 ```sh

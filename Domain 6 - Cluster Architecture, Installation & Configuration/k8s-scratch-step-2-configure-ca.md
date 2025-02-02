@@ -11,7 +11,7 @@ openssl genrsa -out ca.key 2048
 ```
 #### 3. Creating CSR
 ```sh
-openssl req -new -key ca.key -subj -CA -CAcreateserial "/CN=KUBERNETES-CA" -out ca.csr
+openssl req -new -key ca.key -subj "/CN=KUBERNETES-CA" -out ca.csr
 ```
 #### 4. Self-Sign the CSR
 ```sh

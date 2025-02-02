@@ -4,7 +4,7 @@ https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver
 
 #### Step 1: Remove Hosts entry
 
-Remove /etc/hosts entry associated with kplabs-cka-worker
+Remove /etc/hosts entry associated with `worker`
 ```sh
 nano /etc/hosts
 ```
@@ -22,16 +22,18 @@ kubectl describe node worker
 nano /etc/systemd/system/kube-apiserver.service
 ```
 
-##### Step 5: Add the following flag:
+#### Step 5: Add the following flag:
 ```sh
 --kubelet-preferred-address-types InternalIP
 ```
 ```sh
 systemctl daemon-reload
+
 systemctl restart kube-apiserver
 ```
+The restart of kube-apiserver can take 2-3 minutes.
 
-#### Step 6: Verify Connectivity
+### Step 6: Verify Connectivity
 ```sh
 kubectl exec -it  nginx -- ls
 ```
