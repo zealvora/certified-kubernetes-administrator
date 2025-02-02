@@ -11,7 +11,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | ------ | ------ |
 | 1 | [kubeadm - Setting Up Kubernetes Master Node][PlDa] |
 | 2 | [kubeadm - Setting Up Kubernetes Worker Node][PlDb] |
-| 3 | [Step 1: Kubernetes From Scratch - Download Kubernetes Binaries][Plc] |
+| 3 | [Step 1: Kubernetes From Scratch - Download Kubernetes Binaries][PlDc] |
 | 4 | [Step 2: Kubernetes From Scratch - Setup Certificate Authority][PlDd]
 | 5 | [Step 3: Kubernetes From Scratch - Configure ETCD][PlDe]
 | 6 | [Step 4: Kubernetes From Scratch - Configure API Server][PlDf]
