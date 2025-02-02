@@ -2,8 +2,6 @@
 
 https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
 
-https://kubernetes.io/docs/tasks/administer-cluster/encrypt-data/
-
 #### Pre:Requisite Step: Move the kube-apiserver binary to /usr/local/bin directory.
 
 ```sh
