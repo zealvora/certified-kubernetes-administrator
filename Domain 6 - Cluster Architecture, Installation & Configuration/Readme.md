@@ -22,7 +22,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 11 | [Step 9: Kubernetes From Scratch - Configure Networking][PlDk]
 | 12 | [Step 10: Kubernetes From Scratch - API to Kubelet RBAC][PlDl]
 | 13 | [Step 11: Kubernetes From Scratch - Configuring DNS ][PlDm]
-| 14 | [Step 12: Kubernetes From Scratch - Kubelet Preferred Instance Type ][PlDn]
+| 14 | [Step 12: Kubernetes From Scratch - Kubelet Preferred Address Type ][PlDn]
 | 15 | [Breakdown Learning][PlDo]
 | 16 | [ETCD Backup and Restore][PlDp]
 | 17 | [Structure of Network Policy][PlDq]
