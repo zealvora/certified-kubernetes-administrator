@@ -12,15 +12,13 @@ openssl x509 -req -in admin.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out a
 
 #### Step 2. Create KubeConfig file:
 
-Note: Replace the IP address from the below snippet in line 5 with your IP address.
-
 
 ```sh
 {
   kubectl config set-cluster kubernetes-from-scratch \
     --certificate-authority=ca.crt \
     --embed-certs=true \
-    --server=https://${SERVER_IP}:6443 \
+    --server=https://127.0.0.1:6443 \
     --kubeconfig=admin.kubeconfig
 
   kubectl config set-credentials admin \
