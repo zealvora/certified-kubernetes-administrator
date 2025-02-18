@@ -9,17 +9,17 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 1 | [Authenticating with K8s using Tokens][PlDa] |
-| 2 | [Overview of Authorization][PlDb]
-| 3 | [ClusterRole and ClusterRole Bindings][PlDc]
+| 1 | [Creating Token for RBAC Practicals][PlDa] |
+| 2 | [Practical - Role and RoleBinding][PlDb]
+| 3 | [Practical - ClusterRole and ClusterRole Bindings][PlDc]
 | 4 | [Creating TLS Certificate for Authentication][PlDd] |
-| 5 | [Practical - Kubenetes Secrets][PlDf] |
+| 5 | [Practical - Kubenetes Secrets][PlDe] |
 
 
 
 
-   [PlDa]: <./authentication.md>
-   [PlDb]: <./authorization.md>
-   [PlDc]: <./cluster-permissions.md>
+   [PlDa]: <./user-rbac.md>
+   [PlDb]: <./role-rolebinding.md>
+   [PlDc]: <./clusterrole.md>
    [PlDd]: <./certificate-steps.md>
-   [PlDf]: <./secrets.md>
+   [PlDe]: <./secrets.md>
