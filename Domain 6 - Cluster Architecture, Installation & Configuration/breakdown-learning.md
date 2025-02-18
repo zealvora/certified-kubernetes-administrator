@@ -35,7 +35,6 @@ kubectl run kubelet --image=nginx
 
 kubectl get pods
 
-kubectl describe pod kubelet
 ```
 #### Bring Up kubelet
 ```sh

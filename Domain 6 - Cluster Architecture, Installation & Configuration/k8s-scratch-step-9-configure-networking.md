@@ -22,7 +22,7 @@ mv cni-plugins-linux-amd64-v1.6.2.tgz /opt/cni/bin
 cd /opt/cni/bin
 tar -xzvf cni-plugins-linux-amd64-v1.6.2.tgz
 ```
-#### Step 4: Configuring Calico (Run this step on Master Node) - IMPORTANT
+#### Step 4: Configuring Calico (Run this step on Control Plane Node) - IMPORTANT
   
 ```sh
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/tigera-operator.yaml
@@ -38,7 +38,7 @@ In-case if the worker node continues to be in NotReady status even after few min
 systemctl restart kubelet
 ```
 #### Step 5: Verification
-##### Master Node
+##### Control Plane Node
 ```sh
 kubectl get nodes
 
@@ -48,10 +48,10 @@ kubectl get pods
 ```
 #### Note
 
-In-case if you have restarted kubelet and you run the kubectl run nginx to create a POD from master node, it can happen that Status will show Error message. In such-case, just wait for 2-3 minutes and the error would automatically go away and will change to Running.
+In-case if you have restarted kubelet and you run the kubectl run nginx to create a POD from the control-plane node, it can happen that Status will show Error message. In such-case, just wait for 2-3 minutes and the error would automatically go away and will change to Running.
 
 
-#### Step 6: Testing POD Exec (Master Node)
+#### Step 6: Testing POD Exec (Control Plane Node)
 ```sh
 kubectl exec nginx -- ls
 ```
