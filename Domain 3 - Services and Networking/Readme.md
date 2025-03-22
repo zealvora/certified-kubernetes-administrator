@@ -24,8 +24,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 13 | [Service Accounts - Points to Note][PlDm] |
 | 14 | [Service Accounts- Practical Scenerios][PlDn] |
 | 15 | [Named Port][PlDo] |
-
-
+| 16 | [Practical - Metrics Server][PlDp] |
+| 17 | [Practical - Horizontal Pod AutoScaler][PlDq] |
 
 [PlDa]: <./service-endpoints.md>
 [PlDb]: <./service-selector.md>
@@ -42,3 +42,5 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDm]: <./sa-pointers.md>
 [PlDn]: <./sa-practical.md>
 [PlDo]: <./named-port.md>
+[PlDp]: <./install-metric-server.md>
+[PlDq]: <./hpa.md>
