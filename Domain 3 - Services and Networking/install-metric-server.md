@@ -9,5 +9,6 @@ kubectl apply -f https://raw.githubusercontent.com/zealvora/certified-kubernetes
 #### Verify 
 ```sh
 kubectl top pods
+
 kubectl top nodes
 ```
