@@ -1,3 +1,6 @@
+### Documentation Referenced:
+
+https://gateway-api.sigs.k8s.io/implementations/
 
 ### Installing Nginx Gateway Controller
 
@@ -57,7 +60,7 @@ metadata:
   namespace: default
 spec:
   parentRefs:
-  - name: apache-gateway
+  - name: nginx-gateway
   rules:
   - matches:
     - path:
