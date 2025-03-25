@@ -1,3 +1,6 @@
+### Documentation Referenced:
+
+https://gateway-api.sigs.k8s.io/guides/tls/
 
 ### Create TLS Secret
 ```sh
@@ -13,7 +16,7 @@ kubectl get secret example-tls -n default
 ### Define Simple Backend Service
 
 ```sh
-kubectl create deployment nginx --image=httpd:latest --port=80
+kubectl create deployment nginx --image=nginx:latest --port=80
 
 kubectl expose deployment nginx --name=nginx-service --port=80 --target-port=80 --type=ClusterIP
 ```
@@ -40,9 +43,13 @@ spec:
       - kind: Secret
         name: example-tls
 ```
-
+```sh
+kubectl create -f my-tls-gateway.yaml
+```
 ### Define HTTP Route
-
+```sh
+nano httproute.yaml
+```
 ```sh
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
@@ -61,17 +68,24 @@ spec:
       port: 80
 ```
 ```sh
-kubectl apply -f my-tls-gateway.yaml
-
-kubectl get gateways -n default
+kubectl apply -f httproute.yaml
 ```
 ### Test the TLS Termination
 ```sh
-kubectl get service --all-namespaces
+kubectl get gateway
 
+nano /etc/hosts
+```
+```sh
+example.internal <IP-ADDRESS>
+```
+```sh
+curl -k https://example.internal
+curl http://example.internal
+```
+If in windows, you can create curl pod and add /etc/host entry there
+```sh
 kubectl run curl --image=alpine/curl -- sleep 36000
 
 kubectl exec -it curl -- sh
-
-curl <CLUSTER-IP-OF-NGINX>
 ```
