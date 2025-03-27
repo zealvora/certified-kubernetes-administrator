@@ -1,8 +1,8 @@
 ### Documentation Referenced:
 
-https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/
+https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/
 
-### Define a CRD
+### Create a CustomResourceDefinition
 ```sh
 nano crd.yaml
 ```
@@ -40,7 +40,7 @@ kubectl create -f crd.yaml
 
 kubectl get crd
 ```
-### Create Custom Resource
+### Create custom objects
 ```sh
 nano db.yaml
 ```
@@ -57,4 +57,10 @@ spec:
 ```sh
 kubectl create -f db.yaml
 kubectl get database
+```
+
+### Delete CRD
+
+```sh
+kubectl delete -f crd.yaml
 ```
