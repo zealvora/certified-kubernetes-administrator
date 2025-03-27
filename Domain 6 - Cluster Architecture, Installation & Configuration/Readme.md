@@ -29,7 +29,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 18 | [Practical - Network Policies][PlDr]
 | 19 | [Network Policies - Except,Port and Protocol][PlDs]
 | 20 | [Taints and Tolerations][PlDt]
-| 21 | [Upgrading kubeadm Clusters][PlDu] |
+| 21 | [Custom Resource Definition][PlDu]
 
 [PlDa]: <./install-kubeadm-master.md>
 [PlDb]: <./install-kubeadm-worker.md>
@@ -51,4 +51,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDr]: <./netpol-practical.md>
 [PlDs]: <./netpol-02.md>
 [PlDt]: <./taint-toleration.md>
-[PlDu]: <./kubeadm-upgrade.md>
+[PlDu]: <./crds.md>
