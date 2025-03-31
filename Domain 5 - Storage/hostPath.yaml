@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pod
+spec:
+  containers:
+  - name: test-container
+    image: busybox
+    command: ["sleep", "3600"]
+    volumeMounts:
+    - name: host-volume
+      mountPath: /worker-node-data
+  volumes:
+  - name: host-volume
+    hostPath:
+      path: /
+      type: Directory
