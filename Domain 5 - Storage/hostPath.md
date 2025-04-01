@@ -1,3 +1,9 @@
+### Create Pod with hostPath Volume
+
+```sh
+nano hostPath.yaml
+```
+```sh
 apiVersion: v1
 kind: Pod
 metadata:
@@ -14,4 +20,24 @@ spec:
   - name: host-volume
     hostPath:
       path: /
-      type: Directory
+```
+
+```sh
+kubectl create -f hostPath.yaml
+```
+
+### Verification
+```sh
+kubectl get pods
+
+ls -l /
+
+cd /worker-node-data
+
+ls -l /
+```
+
+### Delete the Resources
+```sh
+kubectl delete -f hostPath.yaml
+```

@@ -9,17 +9,20 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 1 | [Creating Volumes in Kubernetes][PlDa] |
-| 2 | [PersistentVolume and PersistentVolumeClaim][PlDb] |
-| 3 | [Static vs Dynamic Provisioning of PV][PlDc]
-| 4 | [Practical 1 - ConfigMaps (Creation)][PlDd]
-| 5 | [Practical 2 - ConfigMaps (Mounting to Pods)][PlDe]
-| 6 | [Security Contexts][PlDf]
+| 1 | [emptyDir Volume][PlDa] |
+| 2 | [hostPath Volume][PlDb] |
+| 3 | [Practical - PersistentVolume and PersistentVolumeClaim][PlDc] |
+| 4 | [Static vs Dynamic Provisioning of PV][PlDd]
+| 5 | [Practical 1 - ConfigMaps (Creation)][PlDe]
+| 6 | [Practical 2 - ConfigMaps (Mounting to Pods)][PlDf]
+| 7 | [Security Contexts][PlDg]
+| 8 | [Practical - Kubenetes Secrets][PlDh]
 
-
-   [PlDa]: <./pod-volume.yaml>
-   [PlDb]: <./pvandpvc.md>
-   [PlDc]: <./dynamic-pvc.md>
-   [PlDd]: <./configmap-01.md>
-   [PlDe]: <./configmap-02.md>
-   [PlDf]: <./security-context.md>
+   [PlDa]: <./emptydir.md>
+   [PlDb]: <./hostPath.md>
+   [PlDc]: <./pv-pvc.md>
+   [PlDd]: <./dynamic-pvc.md>
+   [PlDe]: <./configmap-01.md>
+   [PlDf]: <./configmap-02.md>
+   [PlDg]: <./security-context.md>
+   [PlDh]: <./secrets.md>
