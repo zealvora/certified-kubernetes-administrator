@@ -28,6 +28,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 17 | [Practical - Horizontal Pod AutoScaler][PlDq] |
 | 18 | [Practical - Gateway API][PlDr] |
 | 19 | [Practical - TLS Terminate Mode for Gateway API][PlDs] |
+| 20 | [Custom Resource Definition (CRDs)][PlDt] |
 
 [PlDa]: <./service-endpoints.md>
 [PlDb]: <./service-selector.md>
@@ -48,3 +49,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDq]: <./hpa.md>
 [PlDr]: <./gateway-api.md>
 [PlDs]: <./tls-gateway-api.md>
+[PlDt]: <./crds.md>

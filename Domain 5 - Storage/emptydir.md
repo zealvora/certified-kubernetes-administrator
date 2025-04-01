@@ -1,3 +1,7 @@
+### Documentation Referenced:
+
+https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
+
 ### Base Manifest for Multi-Container Pod
 ```sh
 nano multi-container.yaml

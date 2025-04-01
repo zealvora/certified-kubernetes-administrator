@@ -1,3 +1,7 @@
+### Documentation Referenced:
+
+https://kubernetes.io/docs/concepts/storage/volumes/#hostpath
+
 ### Create Pod with hostPath Volume
 
 ```sh
