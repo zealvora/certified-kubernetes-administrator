@@ -3,13 +3,13 @@
 ```sh
 kubectl create priorityclass high-priority --value=1000 --description="high priority"
 
-kubectl create priorityclass low-priority --value=100 --description="high priority"
+kubectl create priorityclass low-priority --value=100 --description="low priority"
 ```
 
 
 ### Create Deployment with 5 Low-Priority Pods
 ```sh
-nano low-priority-class.yaml
+nano low-priority.yaml
 ```
 ```sh
 apiVersion: apps/v1
@@ -17,7 +17,7 @@ kind: Deployment
 metadata:
   name: low-priority-deploy
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app: low-priority
@@ -32,15 +32,55 @@ spec:
         image: nginx
         resources:
           requests:
-            memory: "100Mi"
-            cpu: "100m"
+            memory: "50Mi"
+            cpu: "30m"
 ```
 ```sh
-kubectl apply -f low-priority-class.yaml
+kubectl apply -f low-priority.yaml
+```
+
+### Create Deployment with No Priority Pods
+
+```sh
+nano no-priority.yaml
+```
+
+```sh
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: no-priority-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: no-priority
+  template:
+    metadata:
+      labels:
+        app: no-priority
+    spec:
+      containers:
+      - name: busybox
+        image: nginx
+        resources:
+          requests:
+            memory: "50Mi"
+            cpu: "30m"
+```
+
+```sh
+kubectl create -f no-priority.yaml
+
+kubectl get deployments
+
+kubectl get pods
+
+kubectl delete -f no-priority.yaml
 ```
 ### Create Deployment with 5 High-Priority Pods
 ```sh
-nano high-priority-class.yaml
+nano high-priority.yaml
 ```
 ```sh
 apiVersion: apps/v1
@@ -48,7 +88,7 @@ kind: Deployment
 metadata:
   name: high-priority-deploy
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app: high-priority
@@ -57,13 +97,31 @@ spec:
       labels:
         app: high-priority
     spec:
-      priorityClassName: low-priority
+      priorityClassName: high-priority
       containers:
       - name: busybox
         image: nginx
         resources:
           requests:
-            memory: "100Mi"
-            cpu: "100m"
+            memory: "50Mi"
+            cpu: "30m"
 ```
 
+```sh
+kubectl create -f high-priority.yaml
+
+kubectl get deployments -w
+
+kubectl get pods
+```
+
+### Delete the Resources
+```sh
+kubectl delete -f low-priority-class.yaml
+
+kubectl delete -f high-priority-class.yaml
+
+kubectl delete priorityclass high-priority
+
+kubectl delete priorityclass low-priority
+```
