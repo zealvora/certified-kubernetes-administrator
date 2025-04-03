@@ -41,12 +41,12 @@ spec:
 kubectl create -f deployment.yaml
 ```
 
-### Step 2 - Create HPA with Stabalization Window
+### Step 2 - Create HPA with Stabilization Window
 ```sh
-nano hpa-stabalization.yaml
+nano hpa-stabilization.yaml
 ```
 ```sh
-apiVersion: autoscaling/v1
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: cpu-hpa
@@ -70,7 +70,7 @@ spec:
 ```
 
 ```sh
-kubectl create -f hpa-stabalization.yaml
+kubectl create -f hpa-stabilization.yaml
 ```
 
 ### Step 3 - Testing
