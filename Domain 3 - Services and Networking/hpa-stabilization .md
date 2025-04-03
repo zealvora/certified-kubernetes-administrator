@@ -1,6 +1,6 @@
 ## Create Deployment and Service
 ```sh
-nano deployment.yaml
+nano deployment-svc.yaml
 ```
 ```sh
 apiVersion: apps/v1
@@ -38,7 +38,7 @@ spec:
     run: php-apache
 ```
 ```sh
-kubectl create -f deployment.yaml
+kubectl create -f deployment-svc.yaml
 ```
 
 ### Step 2 - Create HPA with Stabilization Window
@@ -90,7 +90,7 @@ kubectl get pods
 
 ### Step 4 - Delete the Setup
 ```sh
-kubectl delete -f deployment.yaml
+kubectl delete -f deployment-svc.yaml
 
 kubectl delete hpa cpu-hpa
 ```

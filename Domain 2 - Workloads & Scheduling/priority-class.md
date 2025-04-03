@@ -117,9 +117,9 @@ kubectl get pods
 
 ### Delete the Resources
 ```sh
-kubectl delete -f low-priority-class.yaml
+kubectl delete -f low-priority.yaml
 
-kubectl delete -f high-priority-class.yaml
+kubectl delete -f high-priority.yaml
 
 kubectl delete priorityclass high-priority
 
