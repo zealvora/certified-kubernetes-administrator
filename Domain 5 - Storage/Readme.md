@@ -13,16 +13,24 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 2 | [hostPath Volume][PlDb] |
 | 3 | [Practical - PV and PVC][PlDc] |
 | 4 | [Static vs Dynamic Provisioning of PV][PlDd]
-| 5 | [Practical 1 - ConfigMaps (Creation)][PlDe]
-| 6 | [Practical 2 - ConfigMaps (Mounting to Pods)][PlDf]
-| 7 | [Security Contexts][PlDg]
-| 8 | [Practical - Kubenetes Secrets][PlDh]
+| 5 | [Dynamic Provisioning using Local Path Provisioner][PlDe]
+| 6 | [Storage Class][PlDf]
+| 7 | [Reclaim Policy for Persistent Volumes][PlDg]
+| 8 | [Access Modes for PVCs][PlDh]
+| 9 | [Practical 1 - ConfigMaps (Creation)][PlDi]
+| 10 | [Practical 2 - ConfigMaps (Mounting to Pods)][PlDj]
+| 11 | [Security Contexts][PlDk]
+| 12 | [Practical - Kubenetes Secrets][PlDl]
 
    [PlDa]: <./emptydir.md>
    [PlDb]: <./hostPath.md>
    [PlDc]: <./pv-pvc.md>
-   [PlDd]: <./dynamic-pvc.md>
-   [PlDe]: <./configmap-01.md>
-   [PlDf]: <./configmap-02.md>
-   [PlDg]: <./security-context.md>
-   [PlDh]: <./secrets.md>
+   [PlDd]: <./do-pvc.yaml>
+   [PlDe]: <./rancher-local.md>
+   [PlDf]: <./storage-class.md>
+   [PlDg]: <./reclaim-policy.md>
+   [PlDh]: <./access-modes-pvc.md>
+   [PlDi]: <./configmap-01.md>
+   [PlDj]: <./configmap-02.md>
+   [PlDk]: <./security-context.md>
+   [PlDl]: <./secrets.md>
