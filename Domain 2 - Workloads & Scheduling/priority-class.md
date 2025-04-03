@@ -7,7 +7,7 @@ kubectl create priorityclass low-priority --value=100 --description="low priorit
 ```
 
 
-### Create Deployment with 5 Low-Priority Pods
+### Create Deployment with 3 Low-Priority Pods
 ```sh
 nano low-priority.yaml
 ```
@@ -78,7 +78,7 @@ kubectl get pods
 
 kubectl delete -f no-priority.yaml
 ```
-### Create Deployment with 5 High-Priority Pods
+### Create Deployment with 3 High-Priority Pods
 ```sh
 nano high-priority.yaml
 ```
