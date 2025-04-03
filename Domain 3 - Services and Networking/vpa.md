@@ -1,3 +1,7 @@
+### Documentation Referenced:
+
+https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
+
 ### Installing VPA
 
 ```sh
@@ -80,4 +84,8 @@ Modify updateMode from `off` to `Auto`
 kubectl delete -f nginx-deployment.yaml
 
 kubectl delete -f vpa.yaml
+
+cd autoscaler/vertical-pod-autoscaler/
+
+./hack/vpa-down.sh
 ```
