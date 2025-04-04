@@ -13,23 +13,19 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 2 | [ReplicaSet - Practical][PlDb] |
 | 3 | [Challenges with ReplicaSets][PlDc] |
 | 4 | [Deployment - Practical][PlDd]
-| 5 | [Practical - DaemonSet][PlDe] |
-| 6 | [Practical - NodeSelector][PlDf] |
-| 7 | [Understanding Node Affinity][PlDg] |
+| 5 | [Practical - NodeSelector][PlDe] |
+| 6 | [Practical - DaemonSet][PlDf] |
+| 7 | [Overview of Node Affinity][PlDg] |
 | 8 | [Resource Limits][PlDh] |
-| 9 | [Scheduling Pods without a Scheduler][PlDi] |
-| 10 | [Taints and Tolerations][PlDj] |
-| 11 | [Adapter Pattern][PlDk] |
+| 9 | [Priority Class][PlDi] |
 
 
 [PlDa]: <./labels.md>
 [PlDb]: <./replicaset.md>
 [PlDc]: <./rs-challenges.md>
 [PlDd]: <./deployment.md>
-[PlDe]: <./daemonset.md>
-[PlDf]: <./nodeSelector.md>
+[PlDe]: <./nodeSelector.md>
+[PlDf]: <./daemonset.md>
 [PlDg]: <./node-affinity.md>
 [PlDh]: <./requests-limits.md>
-[PlDi]: <./pod-without-scheduler.md>
-[PlDj]: <./taints-tolerations.md>
-[PlDk]: <./adapter.yaml>
+[PlDi]: <./priority-class.md>

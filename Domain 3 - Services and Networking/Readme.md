@@ -26,7 +26,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 15 | [Named Port][PlDo] |
 | 16 | [Practical - Metrics Server][PlDp] |
 | 17 | [Practical - Horizontal Pod AutoScaler][PlDq] |
-| 18 | [HPA - Stabalization Window][PlDr] |
+| 18 | [HPA - Stabilization Window][PlDr] |
 | 19 | [Practical - Vertical Pod Auto-Scaler ][PlDs] |
 | 20 | [Practical - Gateway API][PlDt] |
 | 21 | [Practical - TLS Terminate Mode for Gateway API][PlDu] |
