@@ -7,6 +7,8 @@ https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler
 ```sh
 git clone https://github.com/kubernetes/autoscaler.git
 
+cd autoscaler/vertical-pod-autoscaler/
+
 ./hack/vpa-up.sh
 
 kubectl get vpa

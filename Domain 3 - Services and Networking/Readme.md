@@ -26,9 +26,12 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 15 | [Named Port][PlDo] |
 | 16 | [Practical - Metrics Server][PlDp] |
 | 17 | [Practical - Horizontal Pod AutoScaler][PlDq] |
-| 18 | [Practical - Gateway API][PlDr] |
-| 19 | [Practical - TLS Terminate Mode for Gateway API][PlDs] |
-| 20 | [Custom Resource Definition (CRDs)][PlDt] |
+| 18 | [HPA - Stabalization Window][PlDr] |
+| 19 | [Practical - Vertical Pod Auto-Scaler ][PlDs] |
+| 20 | [Practical - Gateway API][PlDt] |
+| 21 | [Practical - TLS Terminate Mode for Gateway API][PlDu] |
+| 22 | [Custom Resource Definition (CRDs)][PlDv] |
+
 
 [PlDa]: <./service-endpoints.md>
 [PlDb]: <./service-selector.md>
@@ -47,6 +50,8 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDo]: <./named-port.md>
 [PlDp]: <./install-metric-server.md>
 [PlDq]: <./hpa.md>
-[PlDr]: <./gateway-api.md>
-[PlDs]: <./tls-gateway-api.md>
-[PlDt]: <./crds.md>
+[PlDr]: <./hpa-stabilization .md>
+[PlDs]: <./vpa.md>
+[PlDt]: <./gateway-api.md>
+[PlDu]: <./tls-gateway-api.md>
+[PlDv]: <./crds.md>
