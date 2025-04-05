@@ -30,6 +30,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 19 | [Network Policies - Except,Port and Protocol][PlDs]
 | 20 | [Taints and Tolerations][PlDt]
 | 21 | [Custom Resource Definition][PlDu]
+| 22 | [Editing Existing Kubernetes Resources][PlDu]
 
 [PlDa]: <./install-kubeadm-master.md>
 [PlDb]: <./install-kubeadm-worker.md>
@@ -52,3 +53,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDs]: <./netpol-02.md>
 [PlDt]: <./taint-toleration.md>
 [PlDu]: <./crds.md>
+[PlDv]: <./edit-live-resouce.md>
