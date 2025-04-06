@@ -31,7 +31,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 20 | [Practical - Gateway API][PlDt] |
 | 21 | [Practical - TLS Terminate Mode for Gateway API][PlDu] |
 | 22 | [Custom Resource Definition (CRDs)][PlDv] |
-
+| 23 | [Helm - Skipping CRDs][PlDw] |
 
 [PlDa]: <./service-endpoints.md>
 [PlDb]: <./service-selector.md>
@@ -55,3 +55,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDt]: <./gateway-api.md>
 [PlDu]: <./tls-gateway-api.md>
 [PlDv]: <./crds.md>
+[PlDw]: <./helm-crds.md>
