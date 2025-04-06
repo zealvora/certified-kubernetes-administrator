@@ -19,8 +19,9 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 8 | [Access Modes for PVCs][PlDh]
 | 9 | [Practical 1 - ConfigMaps (Creation)][PlDi]
 | 10 | [Practical 2 - ConfigMaps (Mounting to Pods)][PlDj]
-| 11 | [Security Contexts][PlDk]
-| 12 | [Practical - Kubenetes Secrets][PlDl]
+| 11 | [Immutable ConfigMaps][PlDk]
+| 12 | [Security Contexts][PlDl]
+| 13 | [Practical - Kubenetes Secrets][PlDm]
 
    [PlDa]: <./emptydir.md>
    [PlDb]: <./hostPath.md>
@@ -32,5 +33,6 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
    [PlDh]: <./access-modes-pvc.md>
    [PlDi]: <./configmap-01.md>
    [PlDj]: <./configmap-02.md>
-   [PlDk]: <./security-context.md>
-   [PlDl]: <./secrets.md>
+   [PlDk]: <./immutable-configmap.md>
+   [PlDl]: <./security-context.md>
+   [PlDm]: <./secrets.md>

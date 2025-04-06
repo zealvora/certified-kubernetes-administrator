@@ -18,7 +18,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 7 | [Overview of Node Affinity][PlDg] |
 | 8 | [Resource Limits][PlDh] |
 | 9 | [Priority Class][PlDi] |
-
+| 10 | [Init Containers][PlDi] |
 
 [PlDa]: <./labels.md>
 [PlDb]: <./replicaset.md>
@@ -29,3 +29,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDg]: <./node-affinity.md>
 [PlDh]: <./requests-limits.md>
 [PlDi]: <./priority-class.md>
+[PlDj]: <./init-container.md>

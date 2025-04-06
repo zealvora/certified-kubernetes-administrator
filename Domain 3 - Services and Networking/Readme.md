@@ -18,7 +18,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 7 | [Ingress Rules - Routing Patterns][PlDg] |
 | 8 | [Practical - Ingress Controller][PlDh] |
 | 9 | [Installing Helm][PlDi] |
-| 10 | [Deploying our first Helm Chart][PlDj] |
+| 10 | [Helm Practical][PlDj] |
 | 11 | [Kubernetes Namespace][PlDk] |
 | 12 | [Overview of Service Accounts][PlDl] |
 | 13 | [Service Accounts - Points to Note][PlDm] |
@@ -42,7 +42,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDg]: <./ingress-routing-pattern.md>
 [PlDh]: <./ingress-controller.md>
 [PlDi]: <./install-helm.md>      
-[PlDj]: <./first-helm-chart.md>
+[PlDj]: <./helm-practical.md>
 [PlDk]: <./namespace.md>
 [PlDl]: <./service-account.md>
 [PlDm]: <./sa-pointers.md>

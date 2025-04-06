@@ -26,7 +26,7 @@ helm template bitnami/nginx
 
 helm template bitnami/nginx > nginx.yaml
 
-helm template bitnami/nginx -n > nginx.yaml
+helm template bitnami/nginx -n custom-ns > nginx.yaml
 
 helm uninstall my-nginx
 ```
