@@ -32,8 +32,9 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 21 | [Custom Resource Definition][PlDu]
 | 22 | [Editing Existing Kubernetes Resources][PlDv]
 | 23 | [Capacity, Allocated, and Allocatable][PlDw]
-| 24 | [JSONPath][PlDx]
-| 25 | [Practical - Ingress with TLS][PlDy]
+| 24 | [Exercise - Requests and Limits][PlDx]
+| 25 | [JSONPath][PlDy]
+| 26 | [Practical - Ingress with TLS][PlDz]
 
 [PlDa]: <./install-kubeadm-master.md>
 [PlDb]: <./install-kubeadm-worker.md>
@@ -58,5 +59,6 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDu]: <./crds.md>
 [PlDv]: <./edit-live-resouce.md>
 [PlDw]: <./capacity-allocated.md>
-[PlDx]: <./jsonpath.md>
-[PlDy]: <./ingress-security.md>
+[PlDx]: <./ex-req-limits.md>
+[PlDy]: <./jsonpath.md>
+[PlDz]: <./ingress-security.md>
