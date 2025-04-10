@@ -16,13 +16,19 @@ systemctl status cri-docker
 systemctl enable cri-docker
 ```
 
-### Step 3 - Configure Networking
+### Step 3 - Configure Kernel Parameters
 ```sh
-cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf
-net.ipv4.ip_forward = 1
+cat <<EOF | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = 1
+net.ipv4.ip_forward                 = 1
+net.bridge.bridge-nf-call-ip6tables = 1
 EOF
 
 sudo sysctl --system
+```
+```sh
+modprobe overlay
+modprobe br_netfilter
 ```
 ### Step 4 - Configure Repo and Installation
 ```sh
