@@ -14,7 +14,7 @@ kubectl get storageclass
 
 ### Setup Environement
 ```sh
-wget https://raw.githubusercontent.com/zealvora/certified-kubernetes-administrator/refs/heads/master/Domain%208%20-%20Troubleshooting/script-mariadb.sh
+wget https://raw.githubusercontent.com/zealvora/certified-kubernetes-administrator/refs/heads/master/Exercises/script-mariadb.sh
 ```
 
 The mariadb deployment file `mariadb-deployment.yaml` will be created in same folder were you will be running the script. This can be used to recreate the deployment.

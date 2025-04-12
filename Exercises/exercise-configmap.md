@@ -1,6 +1,6 @@
 ### Setup Environement
 ```sh
-wget https://raw.githubusercontent.com/zealvora/certified-kubernetes-administrator/refs/heads/master/Domain%208%20-%20Troubleshooting/script-cm-deploy.sh
+wget https://raw.githubusercontent.com/zealvora/certified-kubernetes-administrator/refs/heads/master/Exercises/script-cm-deploy.sh
 
 chmod +x script-cm-deploy.sh
 

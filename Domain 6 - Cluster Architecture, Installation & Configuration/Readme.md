@@ -9,33 +9,36 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 1 | [kubeadm - Setting Up Kubernetes Master Node][PlDa] |
-| 2 | [kubeadm - Setting Up Kubernetes Worker Node][PlDb] |
-| 3 | [Step 1: Kubernetes From Scratch - Download Kubernetes Binaries][PlDc] |
-| 4 | [Step 2: Kubernetes From Scratch - Setup Certificate Authority][PlDd]
-| 5 | [Step 3: Kubernetes From Scratch - Configure ETCD][PlDe]
-| 6 | [Step 4: Kubernetes From Scratch - Configure API Server][PlDf]
-| 7 | [Step 5: Kubernetes From Scratch - Configure Controller Manager][PlDg]
-| 8 | [Step 6: Kubernetes From Scratch - Configure Scheduler][PlDh]
-| 9 | [Step 7: Kubernetes From Scratch - Validate Cluster Status][PlDi]
-| 10 | [Step 8: Kubernetes From Scratch - Worker Node Configuration][PlDj]
-| 11 | [Step 9: Kubernetes From Scratch - Configure Networking][PlDk]
-| 12 | [Step 10: Kubernetes From Scratch - API to Kubelet RBAC][PlDl]
-| 13 | [Step 11: Kubernetes From Scratch - Configuring DNS ][PlDm]
-| 14 | [Step 12: Kubernetes From Scratch - Kubelet Preferred Address Type ][PlDn]
-| 15 | [Breakdown Learning][PlDo]
-| 16 | [ETCD Backup and Restore][PlDp]
-| 17 | [Structure of Network Policy][PlDq]
-| 18 | [Practical - Network Policies][PlDr]
-| 19 | [Network Policies - Except,Port and Protocol][PlDs]
-| 20 | [Taints and Tolerations][PlDt]
-| 21 | [Custom Resource Definition][PlDu]
-| 22 | [Editing Existing Kubernetes Resources][PlDv]
-| 23 | [Capacity, Allocated, and Allocatable][PlDw]
-| 24 | [Exercise - Requests and Limits][PlDx]
-| 25 | [JSONPath][PlDy]
-| 26 | [Practical - Ingress with TLS][PlDz]
+| 1 | [sysctl][PlDtmp]
+| 2 | [kubeadm - Setting Up Kubernetes Master Node][PlDa] |
+| 3 | [kubeadm - Setting Up Kubernetes Worker Node][PlDb] |
+| 4 | [sysctl][PlDtmp]
+| 5 | [Step 1: Kubernetes From Scratch - Download Kubernetes Binaries][PlDc] |
+| 6 | [Step 2: Kubernetes From Scratch - Setup Certificate Authority][PlDd]
+| 7 | [Step 3: Kubernetes From Scratch - Configure ETCD][PlDe]
+| 8 | [Step 4: Kubernetes From Scratch - Configure API Server][PlDf]
+| 9 | [Step 5: Kubernetes From Scratch - Configure Controller Manager][PlDg]
+| 10 | [Step 6: Kubernetes From Scratch - Configure Scheduler][PlDh]
+| 11 | [Step 7: Kubernetes From Scratch - Validate Cluster Status][PlDi]
+| 12 | [Step 8: Kubernetes From Scratch - Worker Node Configuration][PlDj]
+| 13 | [Step 9: Kubernetes From Scratch - Configure Networking][PlDk]
+| 14 | [Step 10: Kubernetes From Scratch - API to Kubelet RBAC][PlDl]
+| 15 | [Step 11: Kubernetes From Scratch - Configuring DNS ][PlDm]
+| 16 | [Step 12: Kubernetes From Scratch - Kubelet Preferred Address Type ][PlDn]
+| 17 | [Breakdown Learning][PlDo]
+| 18 | [ETCD Backup and Restore][PlDp]
+| 19 | [Structure of Network Policy][PlDq]
+| 20 | [Practical - Network Policies][PlDr]
+| 21 | [Network Policies - Except,Port and Protocol][PlDs]
+| 22 | [Taints and Tolerations][PlDt]
+| 23 | [Custom Resource Definition][PlDu]
+| 24 | [Editing Existing Kubernetes Resources][PlDv]
+| 25 | [Capacity, Allocated, and Allocatable][PlDw]
+| 26 | [Exercise - Requests and Limits][PlDx]
+| 27 | [JSONPath][PlDy]
+| 28 | [Configuring cri-dockerd][PlDa1]
 
+[PlDtmp]: <./sysctl.md>
 [PlDa]: <./install-kubeadm-master.md>
 [PlDb]: <./install-kubeadm-worker.md>
 [PlDc]: <./k8s-scratch-step-1-download-release-binaries.md>
@@ -62,3 +65,4 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 [PlDx]: <./ex-req-limits.md>
 [PlDy]: <./jsonpath.md>
 [PlDz]: <./ingress-security.md>
+[PlDa1]: <./cri-docker.md>

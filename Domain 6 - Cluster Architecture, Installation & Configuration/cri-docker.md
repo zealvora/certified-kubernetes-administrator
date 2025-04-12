@@ -1,3 +1,6 @@
+### External Websites Referenced
+
+https://github.com/Mirantis/cri-dockerd8
 
 ### Step 1 - Installing Docker and Related Packages
 ```sh
@@ -63,15 +66,29 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl taint nodes --all node-role.kubernetes.io/control-plane-
 ```
 
-Step 6 - Install Network Addon (Calico):
+### Step 7 - Install Network Addon (Calico):
 ```sh
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/tigera-operator.yaml
 
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/custom-resources.yaml
 ```
-Step 7 - Verification
+### Step 8 - Verification
 ```sh
 kubectl get nodes
 kubectl run nginx --image=nginx
+kubectl get pods
+```
+### Step 9 - Testing
+```sh
+systemctl stop cri-docker
+
+kubectl run nginx-2 --image=nginx
+
+kubectl get pods
+
+journalctl -u kubelet
+
+systemctl start cri-docker
+
 kubectl get pods
 ```
