@@ -12,7 +12,7 @@ kubectl get storageclass
 
 3. To verify a successful solution, confirm that the MariaDB deployment pod is running and that the '/var/lib/mysql/initial.txt' file exists inside the pod.
 
-### Setup Environement
+### Setup Environment
 ```sh
 wget https://raw.githubusercontent.com/zealvora/certified-kubernetes-administrator/refs/heads/master/Exercises/script-mariadb.sh
 ```
