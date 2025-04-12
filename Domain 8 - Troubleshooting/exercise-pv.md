@@ -6,11 +6,11 @@ kubectl get storageclass
 ```
 ### Requirement 
 
-There is a deployment named `mariadb` in the `mariadb` namespace. A intern has deleted this deployment by mistake. This deployment used to use a PV named `mariadb-retained-pv` which still exist.
+1. There is a deployment named `mariadb` in the `mariadb` namespace. A intern has deleted this deployment by mistake. This deployment used to use a PV named `mariadb-retained-pv` which still exist.
 
-Your task is to recreate this deployment with a new PVC that binds to the existing PV called `mariadb-retained-pv`
+2. Your task is to recreate this deployment with a new PVC that binds to the existing PV called `mariadb-retained-pv`
 
-To verify a successful solution, confirm that the MariaDB deployment pod is running and that the '/var/lib/mysql/initial.txt' file exists inside the pod.
+3. To verify a successful solution, confirm that the MariaDB deployment pod is running and that the '/var/lib/mysql/initial.txt' file exists inside the pod.
 
 ### Setup Environement
 ```sh

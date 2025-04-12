@@ -29,6 +29,7 @@ openssl s_client -connect secure-web.local:8443 -tls1_3
 ```
 <details>
   <summary>Click to view solution</summary>
+  
 ### Solution
 ```sh
 kubectl get configmap
@@ -70,6 +71,7 @@ openssl s_client -connect secure-web.local:8443 -tls1_3
 
 <details>
   <summary>Delete Resources created in this Lab</summary>
+
 ### Delete Resources
 ```sh
 kubectl delete deployment secure-web
