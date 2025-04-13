@@ -94,6 +94,7 @@ ls -l /var/lib/mysql
 kubectl delete namespace mariadb
 kubectl delete pv mariadb-retained-pv
 sudo rm -rf /opt/local-path-provisioner/mariadb
-rm -f mariadb-deployment.yaml
+rm -f mariadb-deployment.yaml script-mariadb.sh pvc.yaml
+
 ```
 </details>
