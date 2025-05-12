@@ -11,9 +11,11 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 1 | [Kubernetes Events][PlDa] |
 | 2 | [Field selectors][PlDb] |
 | 3 | [Deploying Metric Server][PlDc] |
-
-
+| 4 | [Pod Lifecycle Phases][PlDd] |
+| 5 | [Container Restart Policy][PlDe] |
 
    [PlDa]: <./events.md>
    [PlDb]: <./field-selector.md>
    [PlDc]: <./install-metric-server.md>
+   [PlDd]: <./pod-phases.md>
+   [PlDe]: <./restartPolicy.md>
