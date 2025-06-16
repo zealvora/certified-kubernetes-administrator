@@ -61,7 +61,7 @@ kubectl get pods
 
 kubectl describe rs webserver-replicaset
 
-kubetl describe pod <pod-name>
+kubectl describe pod <pod-name>
 
 kubectl delete pod <pod-name>
 
