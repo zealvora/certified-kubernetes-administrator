@@ -6,7 +6,7 @@ https://kubernetes.io/docs/concepts/services-networking/ingress/#name-based-virt
 ```sh
 kubectl create ingress --help
 
-kubectl first  ingress first-ingress --rule="example.internal/*=example-service:80"
+kubectl create ingress first-ingress --rule="example.internal/*=example-service:80"
 
 kubectl describe ingress first-ingress
 ```
