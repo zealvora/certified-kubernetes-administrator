@@ -51,7 +51,7 @@ curl <IP:NodePort>
 ```sh
 kubectl create service nodeport --help
 
-kubectl create service nodeport test-nodeport --tcp=80:80 --dry-run=client -o ya```ml
+kubectl create service nodeport test-nodeport --tcp=80:80 --dry-run=client -o yaml
 ```
 
 ### Manually Define NodePort in Manifest
