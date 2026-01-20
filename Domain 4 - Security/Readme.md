@@ -13,7 +13,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 | 2 | [Practical - Role and RoleBinding][PlDb]
 | 3 | [Practical - ClusterRole and ClusterRole Bindings][PlDc]
 | 4 | [Creating TLS Certificate for Authentication][PlDd] |
-
+| 5 | [Practical - Create Kubeconfig File from Scratch][PlDe] |
 
 
 
@@ -21,4 +21,5 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
    [PlDb]: <./role-rolebinding.md>
    [PlDc]: <./clusterrole.md>
    [PlDd]: <./certificate-steps.md>
+   [PlDe]: <./kubeconfig.md>
 
