@@ -2,53 +2,64 @@
 
 https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download
 
-### Step 1 Install Docker
-
+#### Step 1 - Install Docker:
 ```sh
-sudo apt-get update
-sudo apt-get -y install ca-certificates curl
+# Add Docker's official GPG key:
+sudo apt update && apt -y install ca-certificates curl
+
 sudo install -m 0755 -d /etc/apt/keyrings
+
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+
 sudo chmod a+r /etc/apt/keyrings/docker.asc
 
+# Add the repository to Apt sources:
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://download.docker.com/linux/ubuntu
+Suites: $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}")
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.asc
+EOF
 
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
+sudo apt update
 ```
-
 ```sh
-sudo apt-get -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 ```
+#### Step 2 - Install Configure Minikube:
+```sh
+wget https://github.com/kubernetes/minikube/releases/download/v1.37.0/minikube-linux-amd64
 
-### Step 2: Install Kubectl
+mv minikube-linux-amd64 minikube
+
+chmod +x minikube
+
+sudo mv ./minikube /usr/local/bin/minikube
+```
 ```sh
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 
-chmod +x kubectl
+sudo mv kubectl /usr/local/bin
 
-mv kubectl /usr/local/bin
-
-kubectl
+chmod +x /usr/local/bin/kubectl
 ```
 
-
-### Step 2: Install Minikube
+#### Step 3 - Create a New user for testing
 ```sh
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
-
-sudo install minikube-linux-amd64 /usr/local/bin/minikube && rm minikube-linux-amd64
+useradd -m -s /bin/bash -G sudo,docker zeal
+visudo -f /etc/sudoers.d/zeal
+zeal ALL=(ALL) NOPASSWD:ALL
+su - zeal
 ```
 
-### Step 3: Start Minikube
+#### Step 4: Start Minikube
 
 ```sh
 minikube start --force
 ```
 
-### Step 4: Verification
+#### Step 5: Verification
 ```sh
 minikube status
 
