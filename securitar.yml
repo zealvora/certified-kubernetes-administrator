@@ -1,0 +1,13 @@
+name: Securitar Scan
+on: [push, pull_request]
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Security Scan
+        uses: securitar/action@v1
+        with:
+          api-key: ${{ secrets.SECURITAR_KEY }}
+          scan-types: "sast,sca,secrets"
