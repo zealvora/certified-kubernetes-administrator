@@ -9,7 +9,7 @@ https://www.udemy.com/course/certified-kubernetes-administrator/?referralCode=70
 
 | Sr No | Document Link |
 | ------ | ------ |
-| 1 | [Practical - Service and Endpoints][PlDa] |
+| 1 | [Practical - Service and EndpointSlice][PlDa] |
 | 2 | [Using Selectors in Service][PlDb] |
 | 3 | [Service Type: ClusterIP][PlDc] |
 | 4 | [Practical - NodePort][PlDd] |
