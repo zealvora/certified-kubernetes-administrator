@@ -2,6 +2,9 @@
 
 https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
 
+Run the following steps only on the Control Plane Node.
+
+
 #### Pre:Requisite Step: Move the kube-apiserver binary to /usr/local/bin directory.
 
 ```sh

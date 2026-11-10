@@ -1,5 +1,8 @@
 ### Run This in Control Plane Node
 
+Run the following step only on the Control Plane Node.
+
+
 ```sh
 cat <<EOF | kubectl apply -f -
 apiVersion: rbac.authorization.k8s.io/v1

@@ -1,4 +1,7 @@
 #### Pre-Requisite 1: Configure Container Runtime. (WORKER NODE)
+
+Run the following steps only on the Worker Node.
+
 ```sh
 {
 cat <<EOF | sudo tee /etc/modules-load.d/containerd.conf
@@ -41,6 +44,9 @@ sudo sysctl --system
 ```
 
 #### Pre-Requisites - 2: (WORKER NODE)
+
+Run the following steps only on the Worker Node.
+
 ```sh
 apt install -y socat conntrack ipset
 
@@ -51,6 +57,8 @@ cd  /root/binaries/kubernetes/node/bin/
 cp kube-proxy kubectl kubelet /usr/local/bin
 ```
 #### Step 1: Generate Kubelet Certificate for Worker Node. (Control Plane Node)
+
+Run the following step only on the Control Plane Node.
 
 Note:
    1. Replace the IP Address and Hostname field in the below configurations according to your enviornement.
@@ -83,6 +91,9 @@ openssl x509 -req -in worker.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -out 
 }
 ```
 #### Step 2: Generate kube-proxy certificate: (Control Plane Node)
+
+Run the following step only on the Control Plane Node.
+
 ```sh
 {
 openssl genrsa -out kube-proxy.key 2048
@@ -94,9 +105,13 @@ openssl x509 -req -in kube-proxy.csr -CA ca.crt -CAkey ca.key -CAcreateserial  -
 ```
 #### Step 3: Copy Certificates to Worker Node (Control Plane Node)
 
+
 This can either be manual approach or via SCP.
 
 ##### - Worker Node (Automated Approach):
+
+Run the following step only on the Worker Node.
+
 ```sh
 grep -r PasswordAuthentication /etc/ssh -l | xargs -n 1 sed -i 's/#\s*PasswordAuthentication\s.*$/PasswordAuthentication yes/; s/^PasswordAuthentication\s*no$/PasswordAuthentication yes/'
 
@@ -106,10 +121,16 @@ passwd zeal
 zeal5872#
 ```
 ##### - Control Plane Node:
+
+Run the following step only on the Control Plane Node.
+
 ```sh
 scp kube-proxy.crt kube-proxy.key worker.crt worker.key ca.crt zeal@64.227.162.102:/tmp
 ```
 ##### - Worker Node:
+
+Run the following steps only on the Worker Node.
+
 ```sh
 mkdir /root/certificates
 
@@ -118,6 +139,9 @@ cd /tmp
 mv kube-proxy.crt kube-proxy.key worker.crt worker.key ca.crt /root/certificates
 ```
 #### Step 4: Move Certificates to Specific Location. (WORKER NODE)
+
+Run the following steps only on the Worker Node.
+
 ```sh
 mkdir /var/lib/kubernetes
 
@@ -130,6 +154,9 @@ mkdir /var/lib/kubelet
 mv worker.crt  worker.key kube-proxy.crt kube-proxy.key /var/lib/kubelet/
 ```
 #### Step 5: Generate Kubelet Configuration YAML File: (WORKER NODE)
+
+Run the following steps only on the Worker Node.
+
 ```sh
 cat <<EOF | sudo tee /var/lib/kubelet/kubelet-config.yaml
 kind: KubeletConfiguration
@@ -151,6 +178,8 @@ cgroupDriver: systemd
 EOF
 ```
 #### Step 6: Generate Systemd service file for kubelet: (WORKER NODE)
+
+Run the following steps only on the Worker Node.
 
 ```sh
 cat <<EOF | sudo tee /etc/systemd/system/kubelet.service
@@ -174,6 +203,8 @@ WantedBy=multi-user.target
 EOF
 ```
 #### Step 7: Generate the Kubeconfig file for Kubelet (WORKER NODE)
+
+Run the following steps only on the Worker Node.
 
 ```sh
 cd /var/lib/kubelet
@@ -210,10 +241,16 @@ mv worker.kubeconfig kubeconfig
 ### Part 2 - Kube-Proxy
 
 #### Step 1: Copy Kube Proxy Certificate to Directory:  (WORKER NODE)
+
+Run the following steps only on the Worker Node.
+
 ```sh
 mkdir /var/lib/kube-proxy
 ```
 #### Step 2: Generate KubeConfig file:
+
+Run the following steps only on the Worker Node.
+
 ```sh
 {
   kubectl config set-cluster kubernetes-from-scratch \
@@ -240,6 +277,9 @@ mkdir /var/lib/kube-proxy
 mv kube-proxy.kubeconfig /var/lib/kube-proxy/kubeconfig
 ```
 #### Step 3: Generate kube-proxy configuration file: (WORKER NODE)
+
+Run the following steps only on the Worker Node.
+
 ```sh
 cd /var/lib/kube-proxy
 ```
@@ -254,6 +294,9 @@ clusterCIDR: "10.200.0.0/16"
 EOF
 ```
 #### Step 4: Create kube-proxy service file: (WORKER NODE)
+
+Run the following steps only on the Worker Node.
+
 ```sh
 cat <<EOF | sudo tee /etc/systemd/system/kube-proxy.service
 [Unit]
@@ -272,6 +315,9 @@ EOF
 ```
 
 #### Step 5: (WORKER NODE)
+
+Run the following steps only on the Worker Node.
+
 ```sh
 systemctl start kubelet
 systemctl start kube-proxy
@@ -284,6 +330,9 @@ systemctl enable kube-proxy
 ```
 
 #### Step 6: (Control Plane Node)
+
+Run the following step only on the Control Plane Node.
+
 ```sh
 kubectl get nodes
 ```

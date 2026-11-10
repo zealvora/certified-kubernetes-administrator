@@ -8,6 +8,10 @@ https://github.com/etcd-io/etcd/releases/tag/v3.5.18
 
 ### Step 1 - Download Server Binaries (Run this in Control Plane Node):
 
+Ensure that the Control Plane Node's hostname is set to `control-plane`
+
+Important: Run the following steps only on the Control Plane Node.
+
 ```sh
 mkdir /root/binaries
 
@@ -25,6 +29,11 @@ tar -xzvf etcd-v3.5.18-linux-amd64.tar.gz
 ```
 
 ### Step 2 - Download Node Binaries (Run this in Worker Node):
+
+Ensure that the Worker Node's hostname is set to `worker`
+
+Important: Run the following steps only on the Worker Node.
+
 ```sh
 mkdir /root/binaries
 

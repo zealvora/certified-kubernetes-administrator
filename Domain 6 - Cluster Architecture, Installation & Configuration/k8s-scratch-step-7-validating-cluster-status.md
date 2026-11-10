@@ -1,3 +1,5 @@
+Run the following steps only on the Control Plane Node.
+
 #### Step 1. Generate Certificate for Administrator User
 ```sh
 cd /root/certificates

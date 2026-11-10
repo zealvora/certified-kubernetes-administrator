@@ -4,12 +4,18 @@
   Step 4 will be on Control Plane node.
 
   #### Step 1: Download CNI Plugins:
+
+  Run the following steps only on the Worker Node.
+
   ```sh
   cd /tmp
 
   wget https://github.com/containernetworking/plugins/releases/download/v1.6.2/cni-plugins-linux-amd64-v1.6.2.tgz
   ```
   #### Step 2: Configure Base Directories:
+
+  Run the following steps only on the Worker Node.
+
   ```sh
   mkdir -p \
     /etc/cni/net.d \
@@ -17,12 +23,18 @@
     /var/run/kubernetes
   ```
   #### Step 3: Move CNI Tar File And Extract it.
+
+  Run the following steps only on the Worker Node.
+
 ```sh
 mv cni-plugins-linux-amd64-v1.6.2.tgz /opt/cni/bin
 cd /opt/cni/bin
 tar -xzvf cni-plugins-linux-amd64-v1.6.2.tgz
 ```
 #### Step 4: Configuring Calico (Run this step on Control Plane Node) - IMPORTANT
+
+Run the following step only on the Control Plane Node.
+
   
 ```sh
 kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.29.1/manifests/tigera-operator.yaml
@@ -39,6 +51,9 @@ systemctl restart kubelet
 ```
 #### Step 5: Verification
 ##### Control Plane Node
+
+Run the following step only on the Control Plane Node.
+
 ```sh
 kubectl get nodes
 
@@ -52,12 +67,16 @@ In-case if you have restarted kubelet and you run the kubectl run nginx to creat
 
 
 #### Step 6: Testing POD Exec (Control Plane Node)
+
+Run the following step only on the Control Plane Node.
+
 ```sh
 kubectl exec nginx -- ls
 ```
 ```sh
 nano /etc/hosts
 ```
+Ensure to replace the following IP of `64.227.162.102` with IP of worker node in your environment. 
 ```sh
 64.227.162.102 worker
 ```

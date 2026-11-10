@@ -1,5 +1,7 @@
 #### 1. Create base directory for Certificate Storage
 
+Run the following steps only on the Control Plane Node.
+
 ```sh
 mkdir /root/certificates
 cd /root/certificates

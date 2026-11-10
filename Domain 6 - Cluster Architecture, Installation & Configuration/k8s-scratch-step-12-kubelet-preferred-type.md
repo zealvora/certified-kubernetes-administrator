@@ -2,6 +2,8 @@
 
 https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/
 
+Run the following steps only on the Control Plane Node.
+
 #### Step 1: Remove Hosts entry
 
 Remove /etc/hosts entry associated with `worker`

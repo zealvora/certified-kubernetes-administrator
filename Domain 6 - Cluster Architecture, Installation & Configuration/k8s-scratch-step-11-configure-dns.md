@@ -1,5 +1,8 @@
 
 #### Step 1: Verify the status of DNS
+
+Run the following step only on the Control Plane Node.
+
 ```sh
 kubectl cluster-info
 ```

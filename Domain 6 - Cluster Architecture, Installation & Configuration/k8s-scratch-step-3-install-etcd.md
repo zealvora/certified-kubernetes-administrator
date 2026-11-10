@@ -2,6 +2,9 @@
 
 https://etcd.io/docs/v3.5/op-guide/configuration/
 
+Run the following steps only on the Control Plane Node.
+
+
 #### Pre-Requisite: Set SERVER-IP variable
 ```sh
 SERVER_IP=139.59.28.67 (change this to your IP)

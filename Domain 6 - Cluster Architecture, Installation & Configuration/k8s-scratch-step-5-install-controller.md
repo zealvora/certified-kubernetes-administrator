@@ -1,3 +1,4 @@
+Run the following steps only on the Control Plane Node.
 
 #### 1. Generate Certificates:
 ```sh
