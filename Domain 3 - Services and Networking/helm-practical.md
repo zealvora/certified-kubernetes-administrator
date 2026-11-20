@@ -9,7 +9,7 @@ https://artifacthub.io/packages/helm/bitnami/nginx
 ```sh
 helm repo add bitnami https://charts.bitnami.com/bitnami
 
-helm install my-nginx bitnami/nginx --version 19.0.4
+helm install my-nginx bitnami/nginx --version 25.2.16
 ```
 
 ### Other Helm Commands
